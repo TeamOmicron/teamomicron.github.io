@@ -280,8 +280,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#performance-results" class="md-nav__link">
-    Performance, results
+  <a href="#background-and-previous-methods" class="md-nav__link">
+    Background and previous methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-results" class="md-nav__link">
+    Performance and results
   </a>
   
 </li>
@@ -294,8 +301,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision" class="md-nav__link">
-    Vision
+  <a href="#field-object-detection" class="md-nav__link">
+    Field object detection
   </a>
   
 </li>
@@ -421,8 +428,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#performance-results" class="md-nav__link">
-    Performance, results
+  <a href="#background-and-previous-methods" class="md-nav__link">
+    Background and previous methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-results" class="md-nav__link">
+    Performance and results
   </a>
   
 </li>
@@ -435,8 +449,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision" class="md-nav__link">
-    Vision
+  <a href="#field-object-detection" class="md-nav__link">
+    Field object detection
   </a>
   
 </li>
@@ -509,22 +523,37 @@
                 <h1 id="omicam">Omicam</h1>
 <p>One of the biggest innovation Team Omicron brings this year is our advanced, all-in-one, custom developed vision and
 localisation application called <em>Omicam</em>. The application is developed mostly in C, with some C++ code to interface with
-OpenCV. </p>
-<h2 id="performance-results">Performance, results</h2>
+OpenCV. It runs on the powerful LattePanda Delta 432 single board computer and uses Linux (Xubuntu 18.04) as its OS.</p>
+<p>We are proud to report that Omicam is a significant step up compared to previous vision applications in use at BBC
+Robotics, as you will see below.</p>
+<p>Omicam consists of <strong>X</strong> lines of code, and took about <strong>X</strong> hours to develop.</p>
+<h2 id="background-and-previous-methods">Background and previous methods</h2>
+<p>Intelligent, accurate and fast computer vision continues to become increasingly important in RoboCup Jr Open Soccer.
+With the introduction of the orange ball and advanced teams' application of "ball-hiding" strategies, accurate and fast
+computer vision is now one of the most important elements of a successful RoboCup Jr Open robot.</p>
+<p>Previously, our team used an OpenMV H7 to provide vision. This is a module which uses an STM32 MCU combined combined with
+an OmniVision camera module to provide low-resolution vision in an easy-to-use MicroPython environment. However, although
+this approach is functional, its resolution and framerate are extremely limiting for our use case. Hence, we decided the
+best solution was to do what the most advanced teams were doing, and develop a custom vision application running on a 
+single board computer (SBC).</p>
+<p><strong>TODO cover Omicam development with other SBCs</strong></p>
+<h2 id="performance-and-results">Performance and results</h2>
 <p>Omicam is capable of detecting 4 field objects at <strong>over 60fps at 720p (1280x720) resolution</strong>. Compared to the previous
-OpenMV H7, this is <strong>23x higher resolution at 2x the framerate.</strong></p>
-<p>In addition, using the novel vision-based localisation algorithm we developed this year, we can determine the
-robot's position to <strong>~1cm accuracy</strong> at realtime speeds. This is over <strong>5x/25x<sup>^</sup> more accurate</strong> than any previous methods 
+OpenMV H7, this is <strong>12x higher resolution at 3x the framerate.<sup>1</sup></strong></p>
+<p>In addition, using the novel vision-based localisation algorithm we developed this year, we can now determine the
+robot's position to <strong>~1cm accuracy</strong> at realtime speeds. This is over <strong>5x/25x more accurate<sup>2</sup></strong> than any previous methods 
 used at BBC Robotics, and has been shown to be much more reliable and stable.</p>
-<p><em><sup>^ depending on whether LRF based/goal based localisation was used</sup></em></p>
 <p>To achieve this performance, we made heavy use of parallel programming techniques, OpenCV's x86 SIMD CPU optimisations,
-Clang optimiser flags as well as intelligent image downscaling for the goal threshold frames (as they are mostly unused).
+Clang optimiser flags as well as intelligent image downscaling for the goal threshold images (as they are mostly unused).
 In addition, the localisation, vision and remote debug pipelines all run in parallel to each other so the entire application
 is asynchronous.</p>
+<p><em><sup>1 results based on mediocre lighting conditions running well optimised OpenMV H7 code at QVGA resolution.</sup></em> </p>
+<p><em><sup>2 depending on whether LRF based/goal based localisation was used.</sup></em></p>
 <h2 id="hardware">Hardware</h2>
-<p>Omicam runs on a Linux-based LattePanda Delta 432.</p>
-<p>More here, camera and stuff.</p>
-<h2 id="vision">Vision</h2>
+<p>Omicam runs on a Linux-based LattePanda Delta 432. The camera used is a USB 2.0 camera using the OV 4689 sensor which can 
+capture video footage at 720p 60 FPS.</p>
+<p><strong>More here, camera and stuff.</strong></p>
+<h2 id="field-object-detection">Field object detection</h2>
 <p>The primary responsibility of Omicam is to detect field objects: the ball, goals and also lines. To do this, we use the 
 popular computer vision library OpenCV, v4. We use Linux's UVC driver to acquire an MJPEG stream from the USB camera. 
 Then, we apply any pre-processing steps such as downscaling the goal frames and gamma boosting.</p>
@@ -533,6 +562,7 @@ parallel framework (as it doesn't run in parallel by default).
 Then, we use OpenCV's parallel connected component labeller, specifically the algorithm by Grana et al[1] to detect regions
 of the same colour in the image. The largest connected region will be the field object we are looking for.</p>
 <p>We then dispatch the largest detected blob's centroid via UART to the ESP32, encoded using Protocol Buffers.</p>
+<p><strong>TODO describe in more detail</strong></p>
 <h2 id="localisation">Localisation</h2>
 <p>Localisation is the problem of detecting where the robot is on the field. This information is essential to know in order
 to develop advanced strategies and precise movement control, instead of just driving directly towards the ball.</p>
@@ -553,8 +583,8 @@ which is impossible to know.</p>
 still vulnerable to all the problems the second approach suffers from as well. We are not aware of expected accuracy, but regard
 this as not an ideal approach.</p>
 <h3 id="our-solution">Our solution</h3>
-<p>This year, Team Omicron presents a novel approach to robot localisation based on the middle-size league paper by Lu, Li, Zhang,
-Hu &amp; Zheng (2013). We localise using purely vision data by solving a non-linear optimisation problem using the lines on the
+<p>This year, Team Omicron presents a novel approach to robot localisation based on a middle-size league paper by Lu, Li, Zhang,
+Hu &amp; Zheng (2013). We localise using purely RGB camera data by solving a non-linear optimisation problem using the lines on the
 playing field.</p>
 <p>In practice, this works by the vision processor passing its thresholded line data to the localiser. Using its worker threads,
 a certain number of rays are casted on the line image using Bresenham's line algorithm[3] to find every time a ray intersects
@@ -565,10 +595,19 @@ the distortion of the 360 degree mirror.</p>
 <p>In simple terms, we optimise by moving a virtual robot around on a field and comparing the distances between what it might
 see and what we <em>really</em> see to "reverse-engineer" the (x,y) position of the real robot.</p>
 <h2 id="interfacing-with-omicontrol">Interfacing with Omicontrol</h2>
+<p>To interface with our remote management application Omicontrol, Omicam starts a TCP server on port 42708. This server sends
+Protocol Buffer packets containing JPEG encoded frames, zlib compressed threshold data as well as other information such as
+the temperature of the SBC.</p>
+<p>We use the SIMD optimised libjpeg-turbo to efficiently encode JPEG frames, so as to not waste performance to the remote debugger
+(which is disabled during competition). Instead of compressing threshold frames with JPEG, because they are 1-bit images,
+it was determined that zlib could compress them more efficiently (around about 460,800x reduction in size). </p>
+<p>With all these optimisations, even at high framerates (60+ packets per second), the remote debug system only uses 300KB/s to 1 MB/s 
+of network bandwidth.</p>
 <h2 id="debugging">Debugging</h2>
 <p>Low-level compiled languages such as C and C++ are notoriously unstable. In order to improve the stability of Omicam
 and fix bugs, we used Google's Address Sanitizer to easily find and trace a variety of bugs such as buffer overflows,
 memory leaks and more. In addition, we used the LLVM toolchain's debugger lldb to analyse the application frequently.</p>
+<p>To assist in performance evaluation, we used the Linux tool OProfile to determine the slowest method calls in the application.</p>
 <h2 id="references">References</h2>
 <p><strong>TODO USE MENDELEY</strong></p>
 <p>[1] C. Grana, D. Borghesani, and R. Cucchiara, “Optimized Block-based Connected Components Labeling with Decision Trees,” IEEE Transac-tions on Image Processing, vol. 19, no. 6, pp. 1596–1609, 2010.</p>
