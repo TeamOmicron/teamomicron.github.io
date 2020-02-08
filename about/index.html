@@ -343,6 +343,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../open_source/" title="Open source acknowledgement" class="md-nav__link">
+      Open source acknowledgement
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -441,7 +453,7 @@ Deus Vult). Our team members are:</p>
 </tbody>
 </table>
 <p><strong>(TODO: will need to be fixed for stupid robocup rules)</strong></p>
-<p>Our members are all very experienced, having competed in previous internationals competitions. Our team collectively
+<p>Our members are all very experienced, having competed in 2-3 previous internationals competitions. Our team collectively
 also has many victories and podium placements in Australian Nationals, States and Regionals competitions.</p>
 <p>We have been preparing for this competition for about <strong>(TODO: how many?)</strong> months and we estimate to have a combined
 <strong>(TODO: put hours here)</strong> hours developing and improving our current iteration of robots.</p>
@@ -450,15 +462,16 @@ also has many victories and podium placements in Australian Nationals, States an
 we have previously developed.</p>
 <p>Some new innovations we have developed this year include:</p>
 <ul>
-<li><strong>Omicam</strong>: our custom vision pipeline developed to replace the OpenMV H7. Programmed in C/C++, running on a LattePanda Delta 432, this
-application is capable of 720p@60fps <strong>(TODO: please confirm)</strong> field object tracking, and centimetre accurate field localisation
-using only camera data (no LRFs, etc) via a novel approach that uses non-linear optimisation algorithms.</li>
-<li><strong>Omicontrol</strong>: our custom, wireless, all-in-one robot control software. Written in Kotlin, this program is used to
+<li><strong>Omicam</strong>: our advanced, custom-developed vision application designed to replace the OpenMV H7. Written mainly in C, Omicam 
+is capable of 70 FPS field object tracking at 720p (1280x720 pixels), and 1cm accurate robot position estimation 
+(localisation) by solving a multi-variate non-linear optimisation problem in real time.</li>
+<li><strong>Omicontrol</strong>: our custom, wireless/wired, all-in-one robot control software. Written in Kotlin, this program is used to
 tune our cameras, move robots around and visualise sensor data.</li>
 <li><strong>Mouse sensor and velocity control</strong>: our robots have fully working PWM-3360 mouse sensors, which we use to accurately
-estimate and control our robot's velocity on the field, in addition to interpolating our localisation data.</li>
+estimate and control our robot&rsquo;s velocity on the field, in addition to interpolating our localisation data.</li>
 <li><strong>Advanced game strategies</strong>: using the above projects, our movement software developers have combined highly accurate localisation
-data with precise velocity control to enable the execution of advanced ball-manipulation strategies on the field.</li>
+data with precise velocity control to enable the execution of advanced ball-manipulation strategies on the field, designed to
+get the upper edge on our opponents.</li>
 <li>Wheels(?)</li>
 <li>Double dribbler and kicker(?)</li>
 </ul>
@@ -466,10 +479,9 @@ data with precise velocity control to enable the execution of advanced ball-mani
 <ul>
 <li><strong>FSM</strong>: last year, we introduced the concept of a Hierarchical Finite State Machine (HFSM) as a novel method of organising
 robot behaviour through a graph of inter-connected state machines, each which contains a series of states that can be
-"switched" through. This year, we continue to build upon this technology, introducing more state machines and more states.</li>
-<li><strong>Protocol Buffers:</strong> at the 2019 Internationals, one of our founding teams (Deus Vult/Omicron) won the Innovation Prize for 
-its use of Protocol Buffers, a Google-developed technology allowing the easy and fast transmission of data between devices. 
-This year, we improve on this technology by using Protocol Buffers in our complex device network.</li>
+&ldquo;switched&rdquo; through. This year, we continue to build upon this technology, introducing more states to our FSM.</li>
+<li><strong>Protocol Buffers:</strong> last year, we unveiled Protocol Buffers as a an easy and intuitive way of passing complex data
+between devices. This year, we continue to use the Google-developed technology, expanding upon its usage scope significantly.</li>
 <li>PCBs (modular?)</li>
 <li>Wheels</li>
 </ul>
@@ -529,6 +541,10 @@ This year, we improve on this technology by using Protocol Buffers in our comple
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2020 Team Omicron.
+          </div>
         
         powered by
         <a href="https://www.mkdocs.org">MkDocs</a>
