@@ -221,6 +221,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../electrical_design/" title="Electrical design" class="md-nav__link">
+      Electrical design
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -296,6 +308,13 @@
         <li class="md-nav__item">
   <a href="#hardware" class="md-nav__link">
     Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prototypes" class="md-nav__link">
+    Prototypes
   </a>
   
 </li>
@@ -502,6 +521,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prototypes" class="md-nav__link">
+    Prototypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#field-object-detection" class="md-nav__link">
     Field object detection
   </a>
@@ -648,8 +674,14 @@ is asynchronous.</p>
 <h2 id="hardware">Hardware</h2>
 <p>Omicam runs on a Linux-based LattePanda Delta 432. It uses an OV4689 USB 2.0 camera module, which is capable of streaming
 motion JPEG (MJPEG) at 720p 100+ fps.</p>
+<h2 id="prototypes">Prototypes</h2>
+<p>The current iteration of Omicam&rsquo;s hardware setup is the cumulation of around 2 years of prototyping iterations.</p>
+<p><strong>Prototype 0 (December 2018-January 2019):</strong> Raspberry Pi Zero W, initial prototype sort of stuff. Too slow. Project canned.</p>
+<p><strong>Prototype 1 (December 2019):</strong> Raspberry Pi 4, custom CV library, GPU acceleration with MMAL. Too slow.</p>
+<p><strong>Prototype 2 (January 2020):</strong> Jetson Nano, OpenCV, CUDA. No performance benefits observed on GPU (slow down in fact).</p>
+<p><strong>Prototype 3 (January-February 2020):</strong> LattePanda Delta 432, OpenCV, purely CPU bound. Final iteration.</p>
+<p><strong>This is out of date</strong></p>
 <p><strong>More here, justifcations for why we picked this hardware.</strong></p>
-<p><strong>TODO cover Omicam development with other SBCs</strong></p>
 <h2 id="field-object-detection">Field object detection</h2>
 <p>The primary responsibility of Omicam is to detect the bounding box and centroid of field objects: the ball, goals and also lines. 
 To do this, we use the popular computer vision library OpenCV (v4.2.0). 
@@ -848,7 +880,7 @@ a it&rsquo;s already relatively close to the true position.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../structural_design/" title="Structural design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../electrical_design/" title="Electrical design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -857,7 +889,7 @@ a it&rsquo;s already relatively close to the true position.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Structural design
+                Electrical design
               </span>
             </div>
           </a>
