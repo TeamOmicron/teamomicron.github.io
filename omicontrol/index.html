@@ -38,7 +38,7 @@
     
     
       
-        <title>Omicontrol (debugging and control) - Team Omicron</title>
+        <title>Omicontrol - Team Omicron</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#omicontrol" tabindex="0" class="md-skip">
+      <a href="#views" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Omicontrol (debugging and control)
+                Omicontrol
               
             </span>
           
@@ -265,8 +265,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../omicam/" title="Omicam (vision and localisastion)" class="md-nav__link">
-      Omicam (vision and localisastion)
+    <a href="../omicam/" title="Omicam" class="md-nav__link">
+      Omicam
     </a>
   </li>
 
@@ -282,26 +282,56 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Omicontrol (debugging and control)
+        Omicontrol
       </label>
     
-    <a href="./" title="Omicontrol (debugging and control)" class="md-nav__link md-nav__link--active">
-      Omicontrol (debugging and control)
+    <a href="./" title="Omicontrol" class="md-nav__link md-nav__link--active">
+      Omicontrol
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    Views
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-view" class="md-nav__link">
+    Camera view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-view" class="md-nav__link">
+    Field view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-view" class="md-nav__link">
+    Calibration view
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#wireless-connection" class="md-nav__link">
@@ -311,8 +341,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wired-connection" class="md-nav__link">
+    Wired connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#communication-protocol" class="md-nav__link">
     Communication protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    Design considerations
   </a>
   
 </li>
@@ -352,6 +396,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fsm/" title="Finite State Machine" class="md-nav__link">
+      Finite State Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowlevel/" title="Low-level code" class="md-nav__link">
+      Low-level code
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -363,8 +431,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../open_source/" title="Open source acknowledgement" class="md-nav__link">
-      Open source acknowledgement
+    <a href="../open_source/" title="Open source" class="md-nav__link">
+      Open source
     </a>
   </li>
 
@@ -383,11 +451,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    Views
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-view" class="md-nav__link">
+    Camera view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-view" class="md-nav__link">
+    Field view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-view" class="md-nav__link">
+    Calibration view
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#wireless-connection" class="md-nav__link">
@@ -397,8 +497,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wired-connection" class="md-nav__link">
+    Wired connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#communication-protocol" class="md-nav__link">
     Communication protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-considerations" class="md-nav__link">
+    Design considerations
   </a>
   
 </li>
@@ -420,8 +534,10 @@
               
                 
                 
-                <h1 id="omicontrol">Omicontrol</h1>
-<p>Omicontrol is Team Omicron&rsquo;s wireless robot/camera debugging and management application. With the creation of Omicam,
+                  <h1>Omicontrol</h1>
+                
+                <p><img alt="Omicam logo" src="../images/omicontrol_logo_dark.png" />  <br />
+Omicontrol is Team Omicron&rsquo;s wireless robot/camera debugging and management application. With the creation of Omicam,
 we needed a way of visualising camera output, managing the SBC and editing thresholds. In the past, we used the OpenMV IDE,
 but given that Omicam is entirely custom developed, this meant we also had to custom-develop our own camera application.</p>
 <p>In addition, with our new advanced strategies and localisation, as well as the potential auto referee future rule addition,
@@ -430,29 +546,61 @@ and automatically reset robots on the field wirelessly, as well as visualise the
 <p>We added both of these features into Omicontrol, to make it essentially our all-in-one robot management application.
 Because the application will be used frequently in debugging as well as in the high-pressure mid-game interval, Omicontrol&rsquo;s
 primary design goals are to be easy to use and reliable.</p>
-<p>Omicontrol is a cross-platform application that is confirmed to work on Windows, Mac and Linux. It&rsquo;s developed in Kotlin
-and uses JavaFX for the GUI.</p>
+<p>Omicontrol is a cross-platform application that works on Windows, Mac and Linux. It&rsquo;s developed in Kotlin
+and uses JavaFX for the GUI, via the TornadoFX Kotlin wrapper.</p>
 <p><img alt="Omicontrol" src="../images/omicontrol.png" />  <br />
 <em>Figure 1: Omicontrol main window running on KDE neon</em></p>
 <p><strong>TODO: maybe make the above a video demonstration fo Omicontrol</strong></p>
+<h2 id="views">Views</h2>
+<p>Omicontrol functions through the concepts of &ldquo;views&rdquo;, which provide different information about different aspects of our
+robot(s).</p>
+<h3 id="camera-view">Camera view</h3>
+<h3 id="field-view">Field view</h3>
+<h3 id="calibration-view">Calibration view</h3>
+<p>This view is used to calibrate the mirror dewarp model, which translates pixel distances from the centre of the mirror
+into centimetre distances on the real field. In the past, this was complex and could take upwards of half an hour.
+We decided this process could be greatly streamlined, so we added the calibration view to Omicontrol.</p>
+<p>To calibrate, the Omicron Calibration Stick is used. This is just a ruler with masking tape every 5cm on it. The ruler
+is placed down on the field, and the user enters the Calibration View and clicks on the each line of tape as visible
+in the frame. Omicontrol will automatically calculate the distances to each point in pixels and add this to a table,
+which can then be exported with a button press. The CSV is loaded in Excel to generate an exponential function which
+maps pixels to centimetres (this could be done inside Omicontrol but is difficult to calculate). Finally, the calculated
+model can then be pasted into Omicontrol, where a mathematical expression parser will evaluate it, allowing the user to
+confirm the model is accurate before hot-swapping it into Omicam.</p>
+<p>With this streamlined process, a mirror model can be calculated and verified in well under 5 minutes which is a large
+improvement.</p>
 <h2 id="wireless-connection">Wireless connection</h2>
 <p>Being able to connect to any robot wirelessly and manage it is a great quality of life improvement, which saves looking
 for cables, troubleshooting connection problems and more. There are a variety of wireless protocols in existence such as
 Bluetooth Classic, Bluetooth LE, Zigbee and others. However, we decided to use TCP/IP over WiFi because it&rsquo;s easy to
 setup and reliable, compared to Bluetooth which has issues on many platforms.</p>
-<p>To accomplish this, the LattePanda SBC creates a WiFi access point (AP) with no internet connection that the client computer
-then connects to, establishing a direct link between the two computers. As shown in Figure 1, to connect you simply have
-to enter the LattePanda&rsquo;s IP on your local network.</p>
-<p>Due to the nature of TCP/IP, we also observed the ability to connect to Omicontrol across the Internet. In this setup,
+<p>To accomplish this, the LattePanda SBC creates a WiFi access point (AP) (with no internet connection() that the client computer
+then connects to, establishing a direct link between the two computers. As shown in Figure 1, the user simply types
+the local IP to connect and everything else is handled for them.</p>
+<p>Due to the nature of TCP/IP, we interestingly also have Omicontrol across the Internet. In this setup,
 an Internet-connected router hosts the LattePanda device on its network via Ethernet or WiFi. The router must port forward
 port 42708 which is used for Omicam to Omicontrol communications. Then, the client computer in an entirely different location,
 even a different country, connects to the Omicam router&rsquo;s public IP address and can interact with the camera and robots
-as normal. While this is interesting, nonetheless it&rsquo;s not used in practice due to lack of a security-focused design or 
-a need to connect across large distances.</p>
+as normal. While this is interesting, nonetheless it&rsquo;s not used in practice due to lack of security, lack of need and
+bandwidth issues.</p>
+<h2 id="wired-connection">Wired connection</h2>
+<p>Although wireless connection is very flexible, on the LattePanda it comes at the cost of a very poor connection in some
+situations and on some SBCs, unfortunately such as the LattePanda. Thus, we decided to use gigabit Ethernet as an alternative 
+connection type. This also acts as a backup in case the venue bans WiFi hotspots (as has happened before), or there&rsquo;s too much signal 
+noise to connect properly.</p>
+<p>This works by using a special Ethernet crossover cable and creating a simple network through assigning static IPs. The  user
+assigns their computer&rsquo;s Ethernet connection the static IP of 10.0.0.1 and the SBC an IP of 10.0.0.2. Then, the user
+simply connects to 10.0.0.1 as the Remote IP in Omicam. Just like the WiFi setup, this creates an offline connection 
+between the two devices at a very high bandwidth and stability. We experience no connection issues at all over Ethernet 
+(although there are some occasional issues with SSH).</p>
 <h2 id="communication-protocol">Communication protocol</h2>
-<p>Communication between the two devices makes heavy use of Protocol Buffers, on the Omicam via nanopb, and on the 
-Omicontrol end in Kotlin via the official Java API from Google. Although there&rsquo;s no Kotlin API for Protocol Buffers, Kotlin
-is fully backwards compatible with Java so there&rsquo;s no issue using the generated Java files.</p>
+<p>The backbone of bidrectional Omicam&lt;&mdash;&gt;Omicontrol communication is a simple TCP socket on port 42708, with Omicam as the host
+and Omicontrol as the client.</p>
+<p>Communication between the two devices makes heavy use of Protocol Buffers, on the Omicam side via nanopb, and on the 
+Omicontrol end in Kotlin via the official Java API from Google (which also works with Kotlin).</p>
+<h2 id="design-considerations">Design considerations</h2>
+<p>The Omicontrol UI was designed to look professional, be simple to use, friendly to use as a tablet and work cross-platform.</p>
+<p><strong>Cover how we achieved these design goals. It&rsquo;s just like digisol (yay.....)</strong></p>
                 
                   
                 
@@ -474,7 +622,7 @@ is fully backwards compatible with Java so there&rsquo;s no issue using the gene
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../omicam/" title="Omicam (vision and localisastion)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../omicam/" title="Omicam" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -483,7 +631,7 @@ is fully backwards compatible with Java so there&rsquo;s no issue using the gene
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Omicam (vision and localisastion)
+                Omicam
               </span>
             </div>
           </a>

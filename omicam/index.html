@@ -38,7 +38,7 @@
     
     
       
-        <title>Omicam (vision and localisastion) - Team Omicron</title>
+        <title>Omicam - Team Omicron</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#omicam" tabindex="0" class="md-skip">
+      <a href="#background-and-previous-methods" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Omicam (vision and localisastion)
+                Omicam
               
             </span>
           
@@ -270,22 +270,18 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Omicam (vision and localisastion)
+        Omicam
       </label>
     
-    <a href="./" title="Omicam (vision and localisastion)" class="md-nav__link md-nav__link--active">
-      Omicam (vision and localisastion)
+    <a href="./" title="Omicam" class="md-nav__link md-nav__link--active">
+      Omicam
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -337,6 +333,33 @@
     Field object detection
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thresholding-and-component-labelling" class="md-nav__link">
+    Thresholding and component labelling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-transforms-and-dispatch" class="md-nav__link">
+    Coordinate transforms and dispatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -355,12 +378,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#our-solution" class="md-nav__link">
-    Our solution
+  <a href="#our-approach" class="md-nav__link">
+    Our approach
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-calculation" class="md-nav__link">
+    Estimate calculation
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#image-analysis" class="md-nav__link">
@@ -377,27 +406,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#position-optimisation" class="md-nav__link">
-    Position optimisation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-new-sensor-data-to-the-world-model" class="md-nav__link">
-    Adding new sensor data to the world model
+  <a href="#coordinate-optimisation-and-interpolation" class="md-nav__link">
+    Coordinate optimisation and interpolation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#justification-for-our-approach" class="md-nav__link">
-    Justification for our approach
+  <a href="#drawbacks" class="md-nav__link">
+    Drawbacks
   </a>
   
 </li>
@@ -408,16 +425,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extramiscellaneous-features" class="md-nav__link">
+    Extra/miscellaneous features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#interfacing-with-omicontrol" class="md-nav__link">
     Interfacing with Omicontrol
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-recording-and-match-replay" class="md-nav__link">
+    Video recording and match replay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#debugging-and-performance-optimisation" class="md-nav__link">
     Debugging and performance optimisation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -445,8 +489,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../omicontrol/" title="Omicontrol (debugging and control)" class="md-nav__link">
-      Omicontrol (debugging and control)
+    <a href="../omicontrol/" title="Omicontrol" class="md-nav__link">
+      Omicontrol
     </a>
   </li>
 
@@ -475,6 +519,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fsm/" title="Finite State Machine" class="md-nav__link">
+      Finite State Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowlevel/" title="Low-level code" class="md-nav__link">
+      Low-level code
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -486,8 +554,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../open_source/" title="Open source acknowledgement" class="md-nav__link">
-      Open source acknowledgement
+    <a href="../open_source/" title="Open source" class="md-nav__link">
+      Open source
     </a>
   </li>
 
@@ -505,8 +573,6 @@
                     
 <nav class="md-nav md-nav--secondary">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -558,6 +624,33 @@
     Field object detection
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thresholding-and-component-labelling" class="md-nav__link">
+    Thresholding and component labelling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-transforms-and-dispatch" class="md-nav__link">
+    Coordinate transforms and dispatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -576,12 +669,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#our-solution" class="md-nav__link">
-    Our solution
+  <a href="#our-approach" class="md-nav__link">
+    Our approach
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-calculation" class="md-nav__link">
+    Estimate calculation
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#image-analysis" class="md-nav__link">
@@ -598,27 +697,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#position-optimisation" class="md-nav__link">
-    Position optimisation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-new-sensor-data-to-the-world-model" class="md-nav__link">
-    Adding new sensor data to the world model
+  <a href="#coordinate-optimisation-and-interpolation" class="md-nav__link">
+    Coordinate optimisation and interpolation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#justification-for-our-approach" class="md-nav__link">
-    Justification for our approach
+  <a href="#drawbacks" class="md-nav__link">
+    Drawbacks
   </a>
   
 </li>
@@ -629,16 +716,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extramiscellaneous-features" class="md-nav__link">
+    Extra/miscellaneous features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#interfacing-with-omicontrol" class="md-nav__link">
     Interfacing with Omicontrol
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-recording-and-match-replay" class="md-nav__link">
+    Video recording and match replay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#debugging-and-performance-optimisation" class="md-nav__link">
     Debugging and performance optimisation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -666,13 +780,16 @@
               
                 
                 
-                <h1 id="omicam">Omicam</h1>
-<p>One of the biggest innovation Team Omicron brings this year is our advanced, custom developed vision and
-localisation application called <em>Omicam</em>. The application is developed mostly in C, with some C++ code to interface with
-OpenCV. It runs on the powerful LattePanda Delta 432 single board computer and uses Linux (Xubuntu 18.04) as its OS.</p>
-<p>We are proud to report that Omicam is a significant step up compared to previous vision applications in use at BBC
+                  <h1>Omicam</h1>
+                
+                <p><img alt="Omicam logo" src="../images/omicam_logo_dark.png" />  <br />
+One of the biggest innovation Team Omicron brings this year is our advanced, custom developed vision and
+localisation application called <em>Omicam</em>. Omicam handles the complex process of detecting the ball and goals, determining
+the robot&rsquo;s position on the field as well as encoding/transmitting this information, in one codebase.</p>
+<p>The application is developed mostly in C, with some C++ code to interface with OpenCV. 
+It runs on the LattePanda Delta 432 single board computer and uses Linux (Xubuntu 18.04) as its OS.</p>
+<p>We are proud to report that Omicam is a significant improvement compared to previous vision applications in use at BBC
 Robotics, as explained in the &ldquo;Performance and results&rdquo; section.</p>
-<p>Omicam consists of <strong>X</strong> lines of code, and took about <strong>X</strong> hours to develop.</p>
 <h2 id="background-and-previous-methods">Background and previous methods</h2>
 <p>Intelligent, accurate and fast computer vision continues to become increasingly important in RoboCup Jr Open Soccer.
 With the introduction of the orange ball and advanced teams&rsquo; application of &ldquo;ball-hiding&rdquo; strategies, high resolution yet
@@ -684,28 +801,28 @@ an OmniVision camera module to provide low-resolution vision in an easy-to-use M
 this approach is functional, its resolution and framerate are extremely limiting for our use case. Hence, we decided the
 best solution was to do what the most advanced teams were doing, and develop a custom vision application running on a 
 single board computer (SBC). In terms of localisation, in the past we managed to get away with not using any, or using
-a low-fidelity approach based on detecting the goals in the image.</p>
+a low-fidelity approach based on detecting the goals in the image. With the introduction of strategies this year, however,
+team members needed more accurate position data, which requires more complex localisation.</p>
 <h2 id="performance-and-results">Performance and results</h2>
-<p>Omicam is capable of detecting the ball, both goals and lines at <strong>60-70fps at 720p (1280x720) resolution</strong>. 
-Compared to the previous OpenMV H7, this is <strong>23x higher resolution at 3x the framerate.<sup>1</sup></strong></p>
+<p><strong>TODO provide some more empiric data (tables and stuff) here. Maybe also provide a Pitfalls section at the end.</strong></p>
+<p>Omicam is capable of detecting the ball, goals and lines at 60-70fps at 720p (1280x720) resolution. 
+Compared to the previous OpenMV H7, this is 23x higher resolution at 3x the framerate.<sup>1</sup></p>
 <p>In addition, using the novel vision-based localisation algorithm we developed this year, we can now determine the
-robot&rsquo;s position to <strong>&lt;1cm accuracy</strong> at around 30 Hz. This is over <strong>5x/25x more accurate<sup>2</sup></strong> 
+robot&rsquo;s position to around 1.5cm accuracy at roughly 30 Hz. This is over 5x/25x more accurate<sup>2</sup>
 than any previous methods used at BBC Robotics, and has been shown to be much more reliable and stable.</p>
-<p>Finally, using the e-con Systems Hyperyon based around the ultra low-light performance IMX290 sensor, our vision pipeline
-is robust against lighting conditions ranging from near pitch black to direct sunlight.</p>
+<p>Using the e-con Systems Hyperyon camera based around the ultra low-light performance IMX290 sensor, Omicam
+is robust against lighting conditions ranging from near pitch darkness to direct LED light.</p>
 <p><em><sup>1 previous results based on mediocre lighting conditions running well optimised OpenMV H7 code at QVGA resolution.</sup></em> </p>
 <p><em><sup>2 depending on whether LRF based/goal based localisation was used.</sup></em></p>
 <h2 id="hardware">Hardware</h2>
 <p>Omicam supports any single board computer (SBC) that can run Linux. In our case, we use a LattePanda Delta 432 with a 
-2.4 GHz quad-core Intel Celeron N4100, 4GB of dual-channel DDR4 RAM, 32GB of storage, WiFi, Bluetooth, gigabit Ethernet
-and a UART bus via the inbuilt ATMega32U4.</p>
+2.4 GHz quad-core Intel Celeron N4100, 4GB RAM, 32GB of storage, WiFi, Bluetooth, gigabit Ethernet and a UART bus.</p>
 <p>The current camera we use is an e-con Systems Hyperyon, based on the Sony Starvis IMX290 ultra low-light sensor capable
 of seeing in almost pitch black at high framerates. This is a USB 2.0 camera module, since the LattePanda has no 
 MIPI port.</p>
 <h3 id="sbc-iterations">SBC iterations</h3>
-<p>The current iteration of Omicam&rsquo;s SBC setup is the cumulation of around 2 years of prototyping iterations. Each
-of the previous SBCs we tried have had one problem or another, and we believe the LattePanda Delta is the most powerful yet
-cost efficient approach.</p>
+<p>The current iteration of Omicam&rsquo;s SBC setup is the cumulation of around 2 years of prototyping iterations in both
+hardware and software approaches.</p>
 <p><strong>Prototype 1 (December 2018-January 2019):</strong> This consisted of a Raspberry Pi Zero W, with a 1 GHz single-core CPU.
 It was our initial prototype for a single-board computer, however, we quickly found it was far too weak to do any vision,
 and our inexperience at the time didn&rsquo;t help. Thus, we canned the SBC project for around a year.</p>
@@ -720,85 +837,116 @@ In theory, using the GPU for processing would lead to a huge performance boost d
 we observed the GPU was significantly slower than even the weaker Cortex-A43 CPU, (presumably) due to copying times. We
 were unable to optimise this to standard after weeks of development, thus we decided to move on from this prototype.</p>
 <p><strong>Prototype 4 (January-February 2020):</strong> After much research, we decided to use the LattePanda Delta 432. The OpenCV
-pipeline is now entirely CPU bound, and despite not using the GPU at all, we are able to achieve very good performance.</p>
+pipeline is now entirely CPU bound, and despite not using the GPU at all, we are able to achieve good performance.</p>
 <h3 id="camera-module-iterations">Camera module iterations</h3>
-<p>We have spent a great deal of time and money trying to find the absolute best camera module to use in our hardware
-setup. After all, no matter how good our software may be, we are still limited by the quality of our image sensor.</p>
+<p>In addition to the SBC, the camera module has undergone many iterations, as it&rsquo;s also an important element in the 
+vision pipeline.</p>
 <p><strong>Pi Camera:</strong> The initial camera we used in hardware prototypes 1-3, was the Raspberry Pi Camera. 
 In prototype 1, we used the Pi Cam v1.3 which is an OV5647 connected via MIPI, and in prototypes 2 and 3 we used the 
 Pi Cam v2 which is an IMX219 again connected via MIPI. We had to drop this camera in later iterations because
 the LattePanda doesn&rsquo;t have a MIPI port. Both of these cameras were capable of around 720p at 60 fps.</p>
 <p><strong>OV4689-based module:</strong> We experimented with a generic OV4689 USB 2.0 camera module from Amazon, which is capable of
 streaming JPEGs (aka an MJPEG stream) at 720p at 120 fps (we could get around 90 fps in practice with no processing).
-While this framerate was impressive, the camera module suffered from terrible noise and flickering in relatively good
+While this framerate was useful, the camera module suffered from noise and flickering in relatively good
 lighting conditions, so it was dropped.</p>
-<p><strong>e-con Hyperyon:</strong> After these two failures, we began looking into professional industrial-grade cameras to use on
+<p><strong>e-con Hyperyon:</strong> After these two failures, we began looking into industrial-grade cameras to use on
 our robot. While most of these, from companies like FLIR, are out of our price range, we found e-con Systems as a
-relatively affordable vendor of extremely high quality cameras. We narrowed down our selection to two devices: the
+relatively affordable vendor of high quality cameras. We narrowed down our selection to two devices: the
 See3CAM_CU30 USB 2/USB 3 2MP camera module, which is fairly standard and affordable, as well as the more expensive
-Hyperyon described above. Using our contacts at CSIRO, we managed to acquire a sample of some of the e-con cameras
-they used including the Hyperyon and a device similar to the CU30. While both can do 720p at 60 fps, we observed
-absolutely fantastic lighting performance from the Hyperyon but 100ms latency, while mediocre lighting performance
-from the CU30 but 60ms latency. After much deliberation, we decided to make the difficult trade-off to prioritise
-lighting over latency and use the Hyperyon.</p>
+Hyperyon described above. After testing both, we decided the Hyperon fit our needs better, despite its higher latency,
+due to its extremely good low light performance.</p>
 <h2 id="field-object-detection">Field object detection</h2>
 <p>The primary responsibility of Omicam is to detect the bounding box and centroid of field objects: the ball, goals and also lines. 
-To do this, we use the popular computer vision library OpenCV (v4.2.0). 
-We use Video4Linux2 (V4L2) to acquire an MJPEG stream from the USB camera, via the popular gstreamer library.
-Then, we apply our pre-processing steps which are: crop the image, mask out the outside of the mirror, mask out the robot
-and downscale for the goal processing.</p>
-<p>Next, we threshold all objects in parallel to make use of our quad-core CPU, using OpenCV&rsquo;s <code>inRange</code> thresholder but a custom
-parallel framework (as it doesn&rsquo;t run in parallel by default). Thresholding generates a 1-bit binary mask of the image, where
-each pixel is 255 (true) if it&rsquo;s inside the RGB range specified, and 0 (false) if it&rsquo;s not.
-Then, we use OpenCV&rsquo;s parallel connected component labeller, specifically the algorithm by Grana et al.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to detect regions
-of the same colour in the image. The largest connected region will be the field object we are looking for. OpenCV automatically
-calculates the bounding box and centroid for each of these connected regions.</p>
-<p>We then dispatch the largest detected blob&rsquo;s centroid via UART to the ESP32, encoded using Protocol Buffers and using
-POSIX termios for UART configuration.</p>
+This is accomplished by using the open-source computer vision library OpenCV (v4.2.0). 
+We use a Gstreamer pipeline to decode the camera&rsquo;s MJPEG stream at our target resolution of 1280x720 pixels, which is
+read in through an OpenCV <code>VideoCapture</code> object.</p>
+<h3 id="pre-processing">Pre-processing</h3>
+<p>With the camera frame in OpenCV memory, we then apply the following pre-processing steps to the image:</p>
+<ol>
+<li>Crop the frame to only leave a rectangle around the mirror visible</li>
+<li>Flip the image, if necessary, to account for the mounting of the camera on the robot</li>
+<li>Apply a circular mask to the image to mask out any pixels that aren&rsquo;t exactly on the mirror</li>
+<li>Downscale the frame for use when processing the blue and yellow goals, since we don&rsquo;t need much accuracy on them and they&rsquo;re large.</li>
+<li>(only for the field lines) Mask out the robot from the centre of the mirror (as it has reflective plastic on it which comes up as white)</li>
+</ol>
+<h3 id="thresholding-and-component-labelling">Thresholding and component labelling</h3>
+<p>After pre-processing, we then use OpenCV&rsquo;s <code>parallel_for</code> and <code>inRange</code> functions to threshold three objects at once using
+three threads (ideally one free core is left for the localisation). 
+This produces a 1-bit binary mask of the image, where each pixel is 255 (true) if it&rsquo;s inside the RGB range specified, 
+and 0 (false) if it&rsquo;s not.</p>
+<p>For the lines, the vision processing step is finished here as we only need a binary mask. Unfortunately, the localisation
+process can&rsquo;t begin until the goals have finished processing due to the localiser relying on the goals in its initial
+estimate calculations (see below).</p>
+<p>Finally, we use OpenCV&rsquo;s Grana<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> parallel connected component labeller to detect regions of the same colour in the image.
+The largest connected region will be the field object we are looking for. 
+OpenCV automatically calculates the bounding box and centroid for each of these connected regions.</p>
+<h3 id="coordinate-transforms-and-dispatch">Coordinate transforms and dispatch</h3>
+<p>Considering the centroid for each field object as a Cartesian vector in pixels coordinates, we convert this vector to
+polar form and run the magnitude through our mirror dewarping function (see below) to convert it to a length in 
+centimetres. This leaves us with a polar vector for each field object relative to the robot&rsquo;s centre.</p>
+<p>We then convert back to Cartesian and use the last localiser position to infer the field object&rsquo;s absolute position in centimetres. </p>
+<p>Finally, for the goals we also calculate the relative Cartesian coordinates (convert polar to Cartesian but don&rsquo;t add 
+localiser position) for use in the localiser&rsquo;s initial estimate calculations.</p>
+<p>This information is encoded into a Protobuf format with nanopb, and is sent over UART to the ESP32 using POSIX termios
+at 115200 baud. Unfortunately, the UART bus is owned by an ATMega 32U4, so a sketch on that device forwards it
+to the ESP32.</p>
 <p><strong>TODO images and/or video of thresholded field</strong></p>
+<p><strong>TODO more detail on dewarp function here (maybe move stuff up from localisation section)</strong></p>
 <h2 id="localisation">Localisation</h2>
 <h3 id="previous-methods-and-background">Previous methods and background</h3>
 <p>Localisation is the problem of detecting where the robot is on the field. This information is essential to know in order
 to develop advanced strategies and precise movement control, instead of just driving directly towards the ball.</p>
-<p>Currently, teams use three main ways of localisation. Firstly, the simplest approach uses the detected goals
-in the camera to estimate the robot&rsquo;s position. This approach is very inaccurate because of the low resolution of
+<p>Currently, teams use three main methods of localisation. Firstly, the most common approach uses the detected goal blobs
+in the camera to triangulate the robot&rsquo;s position. This approach can be very inaccurate because of the low resolution of
 most cameras (such as the OpenMV), the fact that there are only two goals to work with as well as the fact that sometimes
-the goals are not visible (especially in super team). Expected accuracy is 15-25cm.</p>
+the goals are not visible (especially in SuperTeam). Using this approach on an OpenMV, we found accuracy of about 15 cm,
+but running on Omicam at 720p we found accuracy of around 4-6 cm.</p>
 <p>The second approach in use is based on distance sensors such laser range finders (LRFs) or ultrasonic sensors. By using
-several of these sensors on a robot, the position of the robot can be inferred with trigonometry, by measuring the distance
-to the walls. This approach has a major drawback: it is impossible to reliably distinguish between anomalous objects,
-such as a hand or another robot, compared to a wall. This means that although this approach is somewhat accurate on an empty
-field, it is very difficult to use reliably in actual games. Thus, localisation data was almost never trusted by teams
-who used this approach and so is not very helpful. In addition, distances sensors, especially ultrasonics, are slow and suffer 
-from inaccuracy at long distances. Expected accuracy is 5-10cm, but data is invalidated every time a robot moves in the way of a sensor,
-which is impossible to know.</p>
-<p>The third approach in use by some teams is one based on 360 degree LiDARS. These are expensive, heavy, difficult to use, slow and are
-still vulnerable to all the problems the second approach suffers from as well. We are not aware of expected accuracy, but regard
-this as not an ideal approach.</p>
-<h3 id="our-solution">Our solution</h3>
-<p>This year, Team Omicron presents a novel approach to robot localisation based partly on a middle-size league paper by Lu, Li, Zhang,
-Hu &amp; Zheng<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. We localise using only RGB camera data by solving a multi-variate optimisation problem in realtime, via the
-Subplex non-linear gradient-free optimisation algorithm.</p>
-<p>The principle method of operation of our algorithm is that we need to match a virtual model of field geometry to the observed
-one from the camera, thereby inferring our position. Another way to think of it is we need to generate a transform such that
-a virtual model of the field will align with the real one, thereby also calculating our 2D position.<br />
-If we match the lines so that they align in both the virtual model and real-world model, then we can infer that the 
-calculated virtual robot coordinates are the same as the real, unknown robot coordinates. Essentially, we&rsquo;re
-taking what we know: the static layout of the field, and observed field geometry at our current position, and using it to
-infer the unknown 2D position vector.</p>
-<p>This is a form of the orthogonal Procrustes problem, which can be solved through a multitude of approaches such as iterative
-closest point (commonly used with 3D LiDARS), Monte-Carlo localisation via a particle filter or gradient fields. However,
-most of these approaches also consider rotation as a factor. Due to to our use of a high-accuracy BNO-055 IMU, we consider
-rotation to be a non-issue that can be easily corrected for, thereby reducing the complexity of the problem. 
-Thus, we developed a novel three step algorithm involving ray-casting to infer our 2D position, ignoring rotation as a factor 
-to be solved for.</p>
-<p>These steps are:</p>
+a few of these sensors on a robot, the position of the robot can be inferred with trigonometry by measuring the distance
+to the walls. The drawback of this approach is that it&rsquo;s impossible to reliably distinguish between interfering objects,
+such as a hand or another robot, compared to a wall. This means that although this approach can be accurate on an empty
+field, it is very difficult to use reliably in actual games. On an empty field, teams have found accuracies of 5-10 cm,
+but data is often invalid and can&rsquo;t be used reliably in real games.</p>
+<p>The third approach in use by some teams is one based on 360 degree LiDARS. This approach, being similar to the second
+approach, has similar accuracy and drawbacks. One additional drawback is the expensive cost and heavy weight of LiDARS.</p>
+<p>Some teams, including us in the past, do not localise at all. Strictly speaking, with many gameplay behaviours,
+knowing the robot&rsquo;s position is not necessary. However, with our advanced strategies, localisation is a necessity.</p>
+<p><strong>TODO cover mouse sensor here too</strong></p>
+<p><strong>TODO talk about moving average as well</strong></p>
+<h3 id="our-approach">Our approach</h3>
+<p>This year, Team Omicron presents a novel approach to robot localisation based on a hybrid
+sensor-fusion/non-linear optimisation algorithm.
+Our approach builds an initial estimate of the robot&rsquo;s position using faster, more inaccurate methods like goal
+triangulation and mouse sensor velocity integration.
+It then refines this estimate to a much higher accuracy by solving a 2D non-linear minimisation problem in realtime.
+The addition of the optimisation stage to the algorithm increases accuracy by about 4.6x, to be as little as 1.5cm error.</p>
+<p><strong>TODO use new paper</strong></p>
+<p>The optimisation stage of our sensor fusion algorithm is based on a Middle-Size League paper published in <em>Advanced Robotics</em><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. 
+However, there are some differences between their paper and our approach. While they generate line points and then 
+use a particle filter (Monte-Carlo localisation), we instead cast rays over the image and solve a non-linear minimisation problem
+based on ray distances, rather than point locations. However, both methods generally follow the same approach of sampling 
+the line and solving an optimisation problem to figure out the location of the robot. </p>
+<p>Our optimisation algorithm works by comparing observed field line geometry from the camera (sampled via raycasting), 
+to a known model of the field. By trying to optimise the robot&rsquo;s unknown (x,y) position such that it minimises 
+the error between the observed lines and expected lines at each position, we can infer the robot&rsquo;s coordinates to a 
+very high level of accuracy.</p>
+<p><strong>TODO move this paragraph to drawbacks section?</strong></p>
+<p>In theory, this optimisation algorithm can already solve our localisation problem, and we did indeed observe very good
+accuracy using idealistic Fusion 360 rendered images such as the one above <strong>(TODO provide picture)</strong>.
+However, in the real world, we found the optimiser to be very unstable, because the perspective of our camera&rsquo;s 
+mounting obscures very far away field lines that the optimiser needs to converge on a stable solution. 
+To solve this issue, we decided to use other lower-accuracy, but more robust estimates of the robot&rsquo;s position to 
+&ldquo;give hints&rdquo; to the optimisation algorithm, thus forming a sensor fusion approach.</p>
+<p>Our approach has the following 4 main steps:</p>
 <ol>
+<li>Estimate calculation</li>
 <li>Image analysis</li>
 <li>Camera normalisation</li>
-<li>Coordinate optimisation</li>
+<li>Coordinate optimisation and interpolation</li>
 </ol>
-<h4 id="image-analysis">Image analysis</h4>
+<h3 id="estimate-calculation">Estimate calculation</h3>
+<p><strong>Goal maths, mouse sensor, estimate bounds</strong></p>
+<h3 id="image-analysis">Image analysis</h3>
 <p>The localiser&rsquo;s input is a 1-bit mask of pixels that are determined to be on field lines. This is determined by thresholding
 for the colour white, which is handled by the vision pipeline described earlier.</p>
 <p>With the input provided, a certain number of rays (usually 128) are emitted from the centre of the line image. A ray
@@ -806,9 +954,10 @@ terminates when it touches a line, reaches the edge of the image or reaches the 
 waste of time to check outside the mirror). The theory of operation behind this is, essentially, for each field position
 each ray should have its own unique distance.</p>
 <p>Rays are stored as only a length in a regular C array, as we can infer the angle between each ray as: 2pi / n_rays</p>
+<p>This step can be summarised as essentially &ldquo;sampling&rdquo; the line around us on the field.</p>
 <p><img alt="Raycasting" src="../images/raycasting.png" /> <br />
 <em>Figure 1: example of ray casting on field, with a position near to the centre</em></p>
-<h4 id="camera-normalisation">Camera normalisation</h4>
+<h3 id="camera-normalisation">Camera normalisation</h3>
 <p>These rays are then dewarped to counter the distortion of the 360 degree mirror. The equation to do so is determined by
 measuring the pixels between points along evenly spaced tape placed on the real field, via Omicontrol. Using regression 
 software such as Excel or Desmos, an equation can then be calculated to map pixel distances to real distances. 
@@ -818,85 +967,87 @@ with each ray essentially in field coordinates (or field lengths) rather than ca
 <p><img alt="Dewarped" src="../images/dewarped.png" />  <br />
 <em>Figure 2: example of applying the dewarp function to an entire image, on the low resolution OpenMV H7.</em></p>
 <p>The second phase of the camera normalisation is to rotate the rays relative to the robot&rsquo;s heading, using a rotation matrix.
-The robot&rsquo;s heading value, which is relative to when it was powered on, is transmitted by the ESP32, again using Protocol Buffers.
+The robot&rsquo;s heading value, which is relative to when it was powered on, is transmitted by the ESP32 (again using Protocol Buffers).
 For information about how this value is calculated using the IMU, see the ESP32 and movement code page.</p>
-<h4 id="position-optimisation">Position optimisation</h4>
-<p>The main part of our solution is the Subplex local derivative-free non-linear optimiser<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, re-implemented as 
-part of the NLopt package<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. This algorithm essentially acts as an efficiency and stability improvement over the well-known 
-Nelder-Mead Simplex algorithm.</p>
-<p>The most critical part of this process is the <em>objective function</em>, which is a function that takes an N-dimensional vector
+<h3 id="coordinate-optimisation-and-interpolation">Coordinate optimisation and interpolation</h3>
+<p>The coordinate optimisation stage is achieved by using the Subplex local derivative-free non-linear optimisation algorithm
+<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, re-implemented as part of the NLopt package<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. 
+This algorithm essentially acts as an efficiency and stability improvement over the well-known Nelder-Mead Simplex algorithm.</p>
+<p><strong>Talk more about numerical optimisation here? compared to solving</strong></p>
+<p>Our problem description is as follows: (<strong>TODO not correct</strong>)</p>
+<p><img alt="Mathematical description of optimisation problem" src="../images/problem.png" /></p>
+<p>The most important part of this process is the <em>objective function</em>, which is a function that takes an N-dimensional vector
 (in our case, an estimated 2D position) and calculates essentially a &ldquo;score&rdquo; of how accurate the value is. This
 objective function must be highly optimised as it could be evaluated hundreds of times by the optimisation algorithm.</p>
 <p><img alt="Objective function" src="../images/objective_function.png" /> <br />
 <em>Figure 3: map of objective function for a robot placed at the centre of the field. White pixels indicate high accuracy areas</em>
-<em>and black pixels indicate less accurate areas.</em></p>
-<p>A naive approach, where every grid cell is evaluated and the lowest value is picked, would require 44,226 objective function
-evaluation which takes about 5 seconds on a fast computer. Using the Subplex optimiser, this can be reduced to just 62
-evaluations for a 1.2mm accurate fix.</p>
-<p><strong>TODO: cover approaches we drafted: line points, etc. Also, use more images in the docs</strong></p>
-<p>We spent a great deal of effort drafting the most efficient objective function, and the approach we present makes heavy use
-of pre-computation via a &ldquo;field file&rdquo;. This field file is a binary Protcol Buffer file that encodes the geometry of any
-RoboCup field by dividing it into a grid, where each cell is true if on a line, otherwise false. Increasing
-the resolution of the grid will increase its accuracy, but also significantly increase its file size. We use a 1cm grid,
+<em>and black pixels indicate less accurate areas. This takes up to 30 seconds to calculate for all 44,226 positions.</em></p>
+<p><img alt="Objective function 3D visualisation" src="../images/field_heightmap3.png" />  <br />
+<em>Figure 4: if we treat the value of the objective function as a heightmap, we can also generate a 3D visualisation of it</em></p>
+<p>The known geometry of the RoboCup field is encoded into a &ldquo;field file&rdquo;. This is a binary Protcol Buffer file that encodes the 
+geometry of any RoboCup field (including SuperTeam) by dividing it into a grid, where each cell is true if on a line, otherwise false. 
+Increasing the resolution of the grid will increase its accuracy, but also increase its file size. We use a 1cm grid,
 which stores 44,226 cells and is 42 KiB on disk. This takes about 2 seconds to generate on a fast desktop computer, and
-is copied across to the LattePanda.
+is copied across to the LattePanda SBC.
 The field file is generated by a Python script which can be easily modified to support an arbitrary number of different 
 field layouts, such as SuperTeam or our regional Australian field. </p>
-<p>Although the field file could theoretically be loaded
-via the bitmap image below, images are more difficult to load than Protobuf files and it would not support grid cell sizes
-smaller or larger than 1cm.</p>
 <p><img alt="Field file" src="../images/field_file.png" />  <br />
-<em>Figure 3: bitmap image displaying generated field file. In the original 243x182 image, 1 pixel = 1cm</em></p>
-<p>The objective function essentially compares the difference between the ray lengths, as follows:</p>
-<ol>
-<li>Consider the estimated position (eX, eY). Move to (eX, eY) in the field file and raycast out to generate the array
-   <code>expectedRays</code>.</li>
-<li>For each ray in the dewarped <code>observedRays</code> from the camera (which are now in field units, same as <code>expectedRays</code>),
-   do the following: <code>totalError += abs(expectedRays[i] - observedRays[i])</code></li>
-</ol>
-<p>Although a derivative-based algorithm may be more efficient at solving the problem, we deemed it far too difficult to calculate
-the derivative of the objective function.</p>
-<h3 id="adding-new-sensor-data-to-the-world-model">Adding new sensor data to the world model</h3>
-<p>Our localisation algorithm is also flexible with new sensor inputs. Due to the use of a &ldquo;virtual world model&rdquo; approach, if
-any sensors can be modelled as a measurement of a distance to a static object, then they can be integrated as extra data
-in the world model.</p>
-<p>This is extremely helpful when vision data runs into limitations, for example, in SuperTeam where it may be difficult
-to see enough field lines in one frame due to the size of the field. We integrate the LRFs on the robot as
-extra distance sensors, using their reported distance to the field walls just as we use the raycasted &ldquo;line points&rdquo; in
-the vision based approach.</p>
-<p>It would also be possible to use the distance to the goals as virtual information to supplement a potential lack of line
-data and thus increase accuracy. Other distance sensors such as 360 LiDARS can also be implemented with ease.</p>
-<h3 id="justification-for-our-approach">Justification for our approach</h3>
-<p>Observant readers will notice that the objective function is technically linear (as it contains no exponentials or powers).
-Hence, it may be observed that linear programming (essentially linear optimisation) could be used to solve the problem. In
-fact, it&rsquo;s very plausible that something like Dantzig&rsquo;s Simplex/criss-cross algorithm or an interior point algorithm could
-locate the optimum far more efficiently than the Subplex/Nelder-Mead simplex optimiser.</p>
-<p>However, there is a distinct lack of easy to use and non-restrictively licensed linear optimisers for C. The best candidate
-was probably COIN-OR&rsquo;s CLP or Google&rsquo;s Glop, but both of these methods are quite complex compared to NLopt&rsquo;s Subplex algorithm
-(and also written in C++). We determined that given the performance of the localiser (about 30 Hz maximum) and mouse sensor 
-interpolation, it&rsquo;s not worth switching to a linear optimiser when the non-linear one works fine and fast enough.</p>
-<p>Finally, it was brought to our attention that it may be possible to forgo the optimisation process and sum the error of the
-rays in some geometric method to transform the robot&rsquo;s position. While we agree that this may be possible and worth looking into, 
-we believe that optimisation leads to more stable and less error-prone results (though this is not confirmed).</p>
-<h2 id="interfacing-with-omicontrol">Interfacing with Omicontrol</h2>
+<em>Figure 3: visualisation of the field data component of the field file. In the original 243x182 image, 1 pixel = 1cm</em></p>
+<p>Although a derivative-based algorithm may be more efficient at solving the problem, we could not determine a way to
+calculate the derivative of the objective function in a way that was easier than just using a derivative-free
+algorithm. Especially considering the low dimensionality of the problem, a derivative-based algorithm wasn&rsquo;t really
+required.</p>
+<p>With the robot&rsquo;s position now determined to the highest accuracy possible, the final step in the localisation process
+is to smooth and interpolate this coordinate. The optimisation algorithm can produce unstable results, especially in
+environments where the line is not very visible or mistaken for other objects on the field. This is accomplished through
+by using a simple windowed mean. A windowed median was also tried but led to more unstable results. In future, we would
+like to investigate more complex digital signal processing such as a low pass filter to use on this value and judge
+if it improves the localisation result.</p>
+<p><strong>TODO cover dynamic size of moving mean</strong></p>
+<h3 id="drawbacks">Drawbacks</h3>
+<p>Although a lot of effort has been spent improving the performance of our approach, some issues with it remain:</p>
+<ul>
+<li>Accuracy can still be improved. Although 1.5cm is good, it&rsquo;s still a margin of error that may make some more precise
+movements difficult.</li>
+<li>The algorithm can be unstable, especially on internationals fields where lines are harder to see. The initial estimate
+stage and optimiser bounds helps to correct this, but a better algorithm for detecting lines (perhaps using a Sobel filter)
+should be looked into.</li>
+<li>The optimisation stage is still slow, even with only 40 or so objective function evaluations. In the Nelder-Mead simplex
+algorithm (which Subplex is based on), the evaluation of the simplex&rsquo;s vertices could be multi-threaded to speed it up if
+more CPU cores were available. May also be possible to run this algorithm on the GPU, if we had one.</li>
+<li>The algorithm is difficult to debug. Despite programming tools for Omicontrol, it&rsquo;s still difficult to determine exactly
+why the algorithm won&rsquo;t localise sometimes, which could be a problem at competitions.</li>
+</ul>
+<h2 id="extramiscellaneous-features">Extra/miscellaneous features</h2>
+<h3 id="interfacing-with-omicontrol">Interfacing with Omicontrol</h3>
 <p>To interface with our remote management application Omicontrol, Omicam starts a TCP server on port 42708. This server sends
 Protocol Buffer packets containing JPEG encoded frames, zlib compressed threshold data as well as other information such as
-the temperature of the SBC. Although C isn&rsquo;t an officially supported language by Google for Protocol Buffers, we use the mature
-nanopb library to do the encoding. This is the same library used on the ESP32 and Teensy as well, and so far we&rsquo;ve had no
-issues with it.</p>
-<p>We use the SIMD optimised libjpeg-turbo to efficiently encode JPEG frames, so as to not waste performance to the remote debugger
-(which is disabled during competition). Instead of compressing threshold frames with JPEG, because they are 1-bit images,
-it was determined that zlib could compress them more efficiently (around about 460,800x reduction in size). </p>
+the temperature of the SBC. Although C isn&rsquo;t an officially supported language by Google for Protocol Buffers, we use 
+the mature nanopb library to do the encoding.</p>
+<p>We use the SIMD optimised libjpeg-turbo to efficiently encode JPEG frames, so as to not waste performance on the remote 
+debugger (which is disabled during competition). Instead of compressing threshold frames with JPEG, because they are 1-bit 
+images, it was determined that zlib could compress them more efficiently (around about 460,800x reduction in size compared 
+to uncompressed data). </p>
 <p>With all these optimisations, even at high framerates (60+ packets per second), the remote debug system uses no more than
-1 MB/s of outgoing bandwidth, which is small enough to work reliably on both local and Internet networks.</p>
-<h2 id="debugging-and-performance-optimisation">Debugging and performance optimisation</h2>
+1 MB/s of outgoing bandwidth, which is small enough to work reliably over both Ethernet and WiFi.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Usually, we embed configuration in a &ldquo;defines.h&rdquo; file. Config includes information like the bounding box of the crop
+rectangle, the radius of the mirror and the dewarp function.</p>
+<p>Because this is embedded in a header, the project would have to be recompiled and relaunched every time a setting is updated
+which is not ideal. For Omicam, we used an INI file stored on the SBC&rsquo;s disk that is parsed and loaded on every startup.</p>
+<p>In addition, the config file can also be dynamically reloaded by an Omicontrol action, making even relaunching Omicam un-necessary. 
+Because of this, we have much more flexibility and faster prototyping abilities when tuning to different venues.</p>
+<h3 id="video-recording-and-match-replay">Video recording and match replay</h3>
+<p><strong>TODO explain this</strong></p>
+<h3 id="debugging-and-performance-optimisation">Debugging and performance optimisation</h3>
+<p><strong>TODO we may use gcc not clang so talk about that too</strong></p>
 <p>To achieve Omicam&rsquo;s performance, we made heavy use of parallel programming techniques, OpenCV&rsquo;s x86 SIMD CPU optimisations,
-Clang optimiser flags as well as intelligent image downscaling for the goal threshold images (as they are mostly unused).
+Clang optimiser flags as well as image downscaling for the goal threshold images (as they are mostly unused).
 In addition, the localisation, vision and remote debug pipelines all run in parallel to each other so the entire application
 is asynchronous.</p>
-<p>Low-level compiled languages such as C and C++ are notoriously unstable and difficult to debug. In order to improve the stability of Omicam
-and fix bugs, we used Google&rsquo;s Address Sanitizer (ASan) and Undefined Behaviour Sanitizer (UBSan) to easily find and trace a variety of 
-bugs such as buffer overflows, memory leaks and more. 
+<p>Low-level compiled languages such as C and C++ can be difficult to debug in case of memory corruption bugs. 
+In order to improve the stability of Omicam
+and fix bugs, we used Google&rsquo;s Address Sanitizer (ASan) and Undefined Behaviour Sanitizer (UBSan) to easily find and trace a variety of bugs such as buffer overflows, memory leaks and more. 
 In addition, we used the LLVM toolchain&rsquo;s debugger lldb (or just gdb) to analyse the application frequently.</p>
 <p>To assist in performance evaluation, we used the Linux tool OProfile to determine the slowest method calls in the application.
 Although the Clang compiler may have marginally worse performance than GCC, we chose Clang because it&rsquo;s more modern and has
@@ -959,13 +1110,13 @@ a it&rsquo;s already relatively close to the true position.</p>
           </a>
         
         
-          <a href="../omicontrol/" title="Omicontrol (debugging and control)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../omicontrol/" title="Omicontrol" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Omicontrol (debugging and control)
+                Omicontrol
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

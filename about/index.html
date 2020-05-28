@@ -308,8 +308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../omicam/" title="Omicam (vision and localisastion)" class="md-nav__link">
-      Omicam (vision and localisastion)
+    <a href="../omicam/" title="Omicam" class="md-nav__link">
+      Omicam
     </a>
   </li>
 
@@ -320,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../omicontrol/" title="Omicontrol (debugging and control)" class="md-nav__link">
-      Omicontrol (debugging and control)
+    <a href="../omicontrol/" title="Omicontrol" class="md-nav__link">
+      Omicontrol
     </a>
   </li>
 
@@ -350,6 +350,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fsm/" title="Finite State Machine" class="md-nav__link">
+      Finite State Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowlevel/" title="Low-level code" class="md-nav__link">
+      Low-level code
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -361,8 +385,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../open_source/" title="Open source acknowledgement" class="md-nav__link">
-      Open source acknowledgement
+    <a href="../open_source/" title="Open source" class="md-nav__link">
+      Open source
     </a>
   </li>
 
@@ -465,7 +489,7 @@ Deus Vult). Our team members are:</p>
 </tbody>
 </table>
 <p><strong>(TODO: will need to be fixed for stupid robocup rules)</strong></p>
-<p>Our members are all very experienced, having competed in 2-3 previous internationals competitions. Our team collectively
+<p>Our members are experienced, having competed in 2-3 previous internationals competitions. Our team collectively
 also has many victories and podium placements in Australian Nationals, States and Regionals competitions.</p>
 <p>We have been preparing for this competition for about <strong>(TODO: how many?)</strong> months and we estimate to have a combined
 <strong>(TODO: put hours here)</strong> hours developing and improving our current iteration of robots.</p>
@@ -474,25 +498,24 @@ also has many victories and podium placements in Australian Nationals, States an
 we have previously developed.</p>
 <p>Some new innovations we have developed this year include:</p>
 <ul>
-<li><strong>Omicam</strong>: our advanced, custom-developed vision application designed to replace the OpenMV H7. Written mainly in C, Omicam 
-is capable of 70 FPS field object tracking at 720p (1280x720 pixels), and 1cm accurate robot position estimation 
-(localisation) by solving a multi-variate optimisation problem in real time.</li>
-<li><strong>Omicontrol</strong>: our custom, wireless/wired, all-in-one robot control software. Written in Kotlin, this program is used to
-tune our cameras, move robots around and visualise sensor data.</li>
-<li><strong>Mouse sensor and velocity control</strong>: our robots have fully working PWM-3360 mouse sensors, which we use to accurately
+<li><strong>Omicam</strong>: Our advanced vision and localisation application, capable of 70 FPS ball, goal and line detection at 
+1280x720 resolution. It&rsquo;s also capable of 1.5cm accurate localisation by using a using a novel hybrid sensor-fusion/non-linear optimisation algorithm.</li>
+<li><strong>Omicontrol</strong>: Our custom, WiFi/Ethernet robot control software. Written in Kotlin, this program is used to
+tune Omicam, move robots around and visualise sensor data.</li>
+<li><strong>Mouse sensor and velocity control</strong>: Our robots use PixArt PWM3360 mouse sensor, which we use to accurately
 estimate and control our robot&rsquo;s velocity on the field, in addition to interpolating our localisation data.</li>
-<li><strong>Advanced game strategies</strong>: using the above projects, our movement software developers have combined highly accurate localisation
-data with precise velocity control to enable the execution of advanced ball-manipulation strategies on the field, designed to
-get the upper edge on our opponents.</li>
+<li><strong>Advanced game strategies</strong>: Using the above projects, our movement software developers have developed interesting
+and complex ball-manipulation strategies that we use to a competitive advantage on the field such as flick-shots and
+&ldquo;line running&rdquo;.</li>
+<li><strong>Double dribbler and kicker:</strong> (TODO hardware team write info)</li>
 <li>Wheels(?)</li>
-<li>Double dribbler and kicker(?)</li>
 </ul>
 <p>Some technologies we build upon this year include:</p>
 <ul>
-<li><strong>FSM</strong>: last year, we introduced the concept of a Hierarchical Finite State Machine (HFSM) as a novel method of organising
+<li><strong>FSM</strong>: In 2019, we introduced the concept of a Hierarchical Finite State Machine (HFSM) as a method of organising
 robot behaviour through a graph of inter-connected state machines, each which contains a series of states that can be
 &ldquo;switched&rdquo; through. This year, we continue to build upon this technology, introducing more states to our FSM.</li>
-<li><strong>Protocol Buffers:</strong> last year, we unveiled Protocol Buffers as a an easy and intuitive way of passing complex data
+<li><strong>Protocol Buffers:</strong> In 2019, we unveiled Protocol Buffers as a an easy and intuitive way of passing complex data
 between devices. This year, we continue to use the Google-developed technology, expanding upon its usage scope significantly.</li>
 <li>PCBs (modular?)</li>
 <li>Wheels</li>
