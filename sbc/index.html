@@ -38,7 +38,7 @@
     
     
       
-        <title>Electrical design - Team Omicron</title>
+        <title>SBC - Team Omicron</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#electrical-design" tabindex="0" class="md-skip">
+      <a href="#sbc" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Electrical design
+                SBC
               
             </span>
           
@@ -227,6 +227,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../electrical_design/" title="Electrical design" class="md-nav__link">
+      Electrical design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -238,11 +250,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Electrical design
+        SBC
       </label>
     
-    <a href="./" title="Electrical design" class="md-nav__link md-nav__link--active">
-      Electrical design
+    <a href="./" title="SBC" class="md-nav__link md-nav__link--active">
+      SBC
     </a>
     
       
@@ -256,30 +268,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#main-board" class="md-nav__link">
-    Main Board
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sbc-iterations" class="md-nav__link">
+    SBC iterations
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#base-board" class="md-nav__link">
-    Base Board
+        
+          <li class="md-nav__item">
+  <a href="#camera-module-iterations" class="md-nav__link">
+    Camera module iterations
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#kicker-board" class="md-nav__link">
-    Kicker Board
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#debug-board" class="md-nav__link">
-    Debug Board
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -291,18 +302,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sbc/" title="SBC" class="md-nav__link">
-      SBC
-    </a>
   </li>
 
         
@@ -440,30 +439,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#main-board" class="md-nav__link">
-    Main Board
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sbc-iterations" class="md-nav__link">
+    SBC iterations
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#base-board" class="md-nav__link">
-    Base Board
+        
+          <li class="md-nav__item">
+  <a href="#camera-module-iterations" class="md-nav__link">
+    Camera module iterations
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#kicker-board" class="md-nav__link">
-    Kicker Board
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#debug-board" class="md-nav__link">
-    Debug Board
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -484,30 +482,49 @@
               
                 
                 
-                <h1 id="electrical-design">Electrical Design</h1>
-<p>PCBs were used for our electronics to mitigate wiring, as well us enable us to use components that would otherwise be unusable. We use 4 custom-made PCBs, which we label as the “Main”, “Base”, “Kicker” and “Debug” boards.</p>
-<p><strong>TODO: WE NEED IMAGES</strong></p>
-<h2 id="main-board">Main Board</h2>
-<p>The main board is the central board of our electrical design. It contains the power supply, master microcontroller, test points and connections to all the other external electronics. Of these, the most noteworthy development is the use of test points. These are regions of exposed copper designed for convenient probing during the debug stage.</p>
-<p>The Main Board contains:</p>
-<ul>
-<li>Power supply and safety circuitry</li>
-<li>Chip-on-Board ESP32 microcontroller</li>
-<li>Teensy 4.0 microcontroller</li>
-<li>Micro-USB port for uploading</li>
-<li>2 position slide switching for choosing upload target</li>
-<li>BNO055 9-Axis IMU</li>
-<li>Laser Rangefinders</li>
-<li>Buzzers for audio debug</li>
-<li>LEDs for visual debug</li>
-<li>Various test points for easy probing</li>
-</ul>
-<h2 id="base-board">Base Board</h2>
-<p>At the bottom of our robot is the base board. It holds our light sensors, light gate outputs, mouse sensor, and motor controllers. To drive these a slave microcontroller (namely the ATMEGA328p) was soldered directly onto the board. This is to save money and vertical clearance, and to decrease the chance of a short occurring due to the board’s proximity to the motors.</p>
-<h2 id="kicker-board">Kicker Board</h2>
-<p>On the kicker board is the necessary electronics to drive two solenoids. This is not new to RoboCup, however we have made major modifications to the tried and tested design. Instead of directly driving the power MOSFET, we use an optocoupler to isolate the sensitive signal lines from the high voltages running through the circuit in an effort to protect the microcontroller in the event of a failure. Furthermore, we have moved away from relays and instead use MOSFETS to switch the load. We found that relays wore out after many frequent uses, and therefore we decided to use a non-mechanical solution.</p>
-<h2 id="debug-board">Debug Board</h2>
-<p>A problem we have previously faced is the lack of debug tools for our robot. Whilst debug messages are adequate for software design, when the robot is running it is often difficult to connect a computer to it. Hence, we developed a dedicated debug board that allows us to manually interface with our robot for debug purposes.</p>
+                <h1 id="sbc">SBC</h1>
+<p><strong>TODO: this section should be refactored a lot with intro sections and everything</strong></p>
+<h2 id="hardware">Hardware</h2>
+<p>Omicam supports any single board computer (SBC) that can run Linux. In our case, we use a LattePanda Delta 432 with a 
+2.4 GHz quad-core Intel Celeron N4100, 4GB RAM, 32GB of storage, WiFi, Bluetooth, gigabit Ethernet and a UART bus.</p>
+<p>The current camera we use is an e-con Systems Hyperyon, based on the Sony Starvis IMX290 ultra low-light sensor capable
+of seeing in almost pitch black at high framerates. This is a USB 2.0 camera module, since the LattePanda has no 
+MIPI port.</p>
+<h3 id="sbc-iterations">SBC iterations</h3>
+<p>The current iteration of Omicam&rsquo;s SBC setup is the cumulation of around 2 years of prototyping iterations in both
+hardware and software approaches.</p>
+<p><strong>Prototype 1 (December 2018-January 2019):</strong> This consisted of a Raspberry Pi Zero W, with a 1 GHz single-core CPU.
+It was our initial prototype for a single-board computer, however, we quickly found it was far too weak to do any vision,
+and our inexperience at the time didn&rsquo;t help. Thus, we canned the SBC project for around a year.</p>
+<p><strong>Prototype 2 (December 2019):</strong> After resurrecting the SBC R&amp;D project for our 2020 Internationals, we started development
+with the Raspberry Pi 4. This has a 1.5 GHz quad-core ARM Cortex-A72 CPU. We began developing a custom computer vision
+library tailored specifically to our task, using the Pi&rsquo;s MMAL API for GPU-accelerated camera decoding. Initial results
+showed we could threshold images successfully, but we believed it would be too slow to localise and run a
+connected-component labeller in real time.</p>
+<p><strong>Prototype 3 (January 2020):</strong> Next, we moved onto the NVIDIA Jetson Nano, containing a 1.43 GHz quad-core Cortex-A57,
+but far more importantly a 128-core Maxwell GPU. At this time we also switched to using OpenCV 4 for our computer vision.
+In theory, using the GPU for processing would lead to a huge performance boost due to the parallelism, however, in practice
+we observed the GPU was significantly slower than even the weaker Cortex-A43 CPU, (presumably) due to copying times. We
+were unable to optimise this to standard after weeks of development, thus we decided to move on from this prototype.</p>
+<p><strong>Prototype 4 (January-February 2020):</strong> After much research, we decided to use the LattePanda Delta 432. The OpenCV
+pipeline is now entirely CPU bound, and despite not using the GPU at all, we are able to achieve good performance.</p>
+<h3 id="camera-module-iterations">Camera module iterations</h3>
+<p>In addition to the SBC, the camera module has undergone many iterations, as it&rsquo;s also an important element in the 
+vision pipeline.</p>
+<p><strong>Pi Camera:</strong> The initial camera we used in hardware prototypes 1-3, was the Raspberry Pi Camera. 
+In prototype 1, we used the Pi Cam v1.3 which is an OV5647 connected via MIPI, and in prototypes 2 and 3 we used the 
+Pi Cam v2 which is an IMX219 again connected via MIPI. We had to drop this camera in later iterations because
+the LattePanda doesn&rsquo;t have a MIPI port. Both of these cameras were capable of around 720p at 60 fps.</p>
+<p><strong>OV4689-based module:</strong> We experimented with a generic OV4689 USB 2.0 camera module from Amazon, which is capable of
+streaming JPEGs (aka an MJPEG stream) at 720p at 120 fps (we could get around 90 fps in practice with no processing).
+While this framerate was useful, the camera module suffered from noise and flickering in relatively good
+lighting conditions, so it was dropped.</p>
+<p><strong>e-con Hyperyon:</strong> After these two failures, we began looking into industrial-grade cameras to use on
+our robot. While most of these, from companies like FLIR, are out of our price range, we found e-con Systems as a
+relatively affordable vendor of high quality cameras. We narrowed down our selection to two devices: the
+See3CAM_CU30 USB 2/USB 3 2MP camera module, which is fairly standard and affordable, as well as the more expensive
+Hyperyon described above. After testing both, we decided the Hyperon fit our needs better, despite its higher latency,
+due to its extremely good low light performance.</p>
                 
                   
                 
@@ -529,7 +546,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../structural_design/" title="Structural design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../electrical_design/" title="Electrical design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -538,19 +555,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Structural design
+                Electrical design
               </span>
             </div>
           </a>
         
         
-          <a href="../sbc/" title="SBC" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../omicam/" title="Omicam" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                SBC
+                Omicam
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
