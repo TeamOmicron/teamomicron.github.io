@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation website for Team Omicron, a RoboCup Jr Open Soccer team from Brisbane Boys' College.">
+        <meta name="description" content="Documentation website for Team Omicron, an open-source RoboCup Jr Open Soccer team from Brisbane Boys' College.">
       
       
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
@@ -232,7 +232,7 @@
 
   <li class="md-nav__item">
     <a href="../sbc/" class="md-nav__link">
-      SBC
+      SBC & Camera
     </a>
   </li>
 
@@ -263,6 +263,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open_source_release/" class="md-nav__link">
+      Our open-source release!
+    </a>
+  </li>
+
         
           
           
@@ -429,15 +441,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#video-recording-and-match-replay" class="md-nav__link">
-    Video recording and match replay
+  <a href="#video-recording" class="md-nav__link">
+    Video recording
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-optimisation-methods" class="md-nav__link">
-    Code optimisation methods
+  <a href="#replay-system" class="md-nav__link">
+    Replay system
   </a>
   
 </li>
@@ -542,13 +554,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7" >
-    <label class="md-nav__link" for="nav-4-7">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" >
+    <label class="md-nav__link" for="nav-4-8">
       Open source
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Open source" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-7">
+      <label class="md-nav__title" for="nav-4-8">
         <span class="md-nav__icon md-icon"></span>
         Open source
       </label>
@@ -562,7 +574,7 @@
 
   <li class="md-nav__item">
     <a href="../open_source/" class="md-nav__link">
-      Open source info
+      Third party libraries
     </a>
   </li>
 
@@ -731,15 +743,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#video-recording-and-match-replay" class="md-nav__link">
-    Video recording and match replay
+  <a href="#video-recording" class="md-nav__link">
+    Video recording
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-optimisation-methods" class="md-nav__link">
-    Code optimisation methods
+  <a href="#replay-system" class="md-nav__link">
+    Replay system
   </a>
   
 </li>
@@ -785,8 +797,9 @@
                 
                   <h1>Omicam</h1>
                 
-                <p><img alt="Omicam logo" src="../images/omicam_logo_dark.png" />  <br />
-One of the biggest innovation Team Omicron brings this year is our high-performance, custom vision and
+                <p><img alt="Omicam logo" src="../images/omicam_logo_dark.png" />    </p>
+<p><em>Author(s): Matt Young, vision systems &amp; low-level developer</em></p>
+<p>One of the biggest innovation Team Omicron brings this year is our high-performance, custom vision and
 localisation application (i.e. camera) called <em>Omicam</em>. Omicam handles the complex process of detecting the ball and goals, determining the robot&rsquo;s position on the field as well as encoding/transmitting this information, all in one highly
 optimised codebase.</p>
 <p>The application is developed mostly in C, with some C++ code to interface with OpenCV. 
@@ -807,7 +820,6 @@ single board computer (SBC). In terms of localisation, in the past we managed to
 a low-fidelity approach based on detecting the goals in the image. With the introduction of strategies this year, however,
 team members needed more accurate position data, which requires more complex localisation.</p>
 <h2 id="performance-and-results">Performance and results</h2>
-<p><strong>TODO provide some more empiric data (tables and stuff) here. Maybe also provide a Pitfalls section at the end.</strong></p>
 <p>Omicam is capable of detecting the ball, goals and lines at 60-70fps at 720p (1280x720) resolution. 
 Compared to the previous OpenMV H7, this is 23x higher resolution at 3x the framerate.<sup>1</sup></p>
 <p>In addition, using the novel vision-based localisation algorithm we developed this year, we can now determine the
@@ -815,8 +827,8 @@ robot&rsquo;s position to around 1.5cm accuracy at roughly 30 Hz. This is over 5
 than any previous methods used at BBC Robotics, and has been shown to be much more reliable and stable.</p>
 <p>Using the e-con Systems Hyperyon camera based around the ultra low-light performance IMX290 sensor, Omicam
 is robust against lighting conditions ranging from near pitch darkness to direct LED light.</p>
-<p><em><sup>1 previous results based on mediocre lighting conditions running well optimised OpenMV H7 code at QVGA resolution.</sup></em> </p>
-<p><em><sup>2 depending on whether LRF based/goal based localisation was used.</sup></em></p>
+<p><em><sup>1: previous results based on mediocre lighting conditions running well optimised OpenMV H7 code at QVGA resolution.</sup></em> </p>
+<p><em><sup>2: depending on whether LRF based/goal based localisation was used.</sup></em></p>
 <h2 id="field-object-detection">Field object detection</h2>
 <p>One of the responsibilities of Omicam is to detect the bounding box and centroid of field objects: the ball, goals and also lines. 
 This is accomplished by using the open-source computer vision library OpenCV (v4.2.0). 
@@ -1011,12 +1023,12 @@ Protocol Buffer packets containing JPEG encoded frames, zlib compressed threshol
 the temperature of the SBC. The TCP listen thread receives messages from the Omicontrol client, decodes them and executes
 the specified action ID (for example, save data to disk) if one is specified. The TCP send thread receives data from
 the vision and localisation pipelines, and encodes them an sends them over network.</p>
-<p>We use the SIMD optimised libjpeg-turbo to efficiently encode JPEG frames, so as to not waste performance on the remote 
+<p>One important feature of the Omicam and Omicontrol connection is its ability to operate at high framerates, while not
+using too much bandwidth. To achieve this,
+we use the SIMD optimised libjpeg-turbo to efficiently encode JPEG frames, so as to not waste performance on the remote 
 debugger (which is disabled during competition). Instead of compressing threshold frames with JPEG, because they are 1-bit 
 images, it was determined that zlib could compress them more efficiently (around about 460,800x reduction in size compared 
 to uncompressed data). </p>
-<p>With all these optimisations, even at high framerates (60+ packets per second), the remote debug system uses no more than
-1 MB/s of outgoing bandwidth, which is small enough to work reliably over both Ethernet and WiFi.</p>
 <h3 id="configuration">Configuration</h3>
 <p>Usually, we embed configuration in a &ldquo;defines.h&rdquo; file. Config includes information like the bounding box of the crop
 rectangle, the radius of the mirror and the dewarp function.</p>
@@ -1024,44 +1036,27 @@ rectangle, the radius of the mirror and the dewarp function.</p>
 which is not ideal. For Omicam, we used an INI file stored on the SBC&rsquo;s disk that is parsed and loaded on every startup.</p>
 <p>In addition, the config file can also be dynamically reloaded by an Omicontrol action, making even relaunching Omicam un-necessary. 
 Because of this, we have much more flexibility and faster prototyping abilities when tuning to different venues.</p>
-<h3 id="video-recording-and-match-replay">Video recording and match replay</h3>
-<p>Omicam can record its vision output to disk as an mp4 file. When this is enabled in the configuration, a thread is started
+<h3 id="video-recording">Video recording</h3>
+<p>Omicam can record its vision output to disk as an MP4 file. When this is enabled in the configuration, a thread is started
 that writes video frames to an OpenCV <code>VideoWriter</code> at the correct framerate to produce a stable 60 fps video. These
 generated videos can be loaded as Omicam input (instead of using a live camera), thus enabling a capture and replay system.</p>
 <p>In this way, games can be recorded for later analysis of Omicam&rsquo;s performance and accuracy, or for entertainment value.</p>
+<h3 id="replay-system">Replay system</h3>
 <p><strong>TODO describe in more depth the new replay system</strong></p>
-<h3 id="code-optimisation-methods">Code optimisation methods</h3>
-<p>Here are a sample of some of th techniques we used, both in code and with the Clang compiler, to optimise Omicam&rsquo;s
-performance:</p>
-<ul>
-<li>Use <code>-O3</code> optimisation setting in release builds</li>
-<li>(NOT DONE YET) Use link time optimisation (LTO) with Clang</li>
-<li>(NOT DONE YET) Use profile guided optimisation (PGO) with Clang</li>
-<li>Extensive use of multi-threading, especially with OpenCV, to process multiple objects at once. The localisation and
-vision pipelines are also independent of each other as much as is possible.</li>
-<li>Enable OpenCV&rsquo;s CPU-specific optimisations for x86 architecture, such as SSE and AVX instructions</li>
-<li>Downscale the goal threshold image before processing as less accuracy is required</li>
-<li>In the localiser, we use the last extrapolated position from the mouse sensor as a seed for the initial
-position of the next search. This means instead of starting from a random position, the localiser will complete much quickly
-as it&rsquo;s already relatively close to the true position.</li>
-</ul>
-<p><strong>Also cover Linux CPU optimisation and associated thermal issues if relevant</strong></p>
+<p><strong>TODO Add section talking about how we achieved high framerates?</strong></p>
 <h3 id="debugging-and-diagnostics">Debugging and diagnostics</h3>
 <p><strong>TODO we may use gcc not clang so talk about that too</strong></p>
 <p>Low-level compiled languages such as C and C++ can be difficult to debug when memory corruption or undefined behaviour
-issues manifest. In addition, many latent bugs can go undetected in code written in these languages.
+issues occur. In addition, many latent bugs can go undetected in code written in these languages.
 In order to improve the stability of Omicam
-and fix bugs, we used Google&rsquo;s Address Sanitizer (ASan) and Undefined Behaviour Sanitizer (UBSan) to easily find and trace a variety of bugs such as buffer overflows, memory leaks and more. 
-In addition, we used the LLVM toolchain&rsquo;s debugger lldb (or just gdb) to analyse the application frequently.</p>
-<p>To assist in performance evaluation, we used the Linux tool OProfile to determine the slowest method calls in the application.
-Although the Clang compiler may have marginally worse performance than GCC, we chose Clang because it&rsquo;s more modern and has
-better debugging support (namely, GCC&rsquo;s Adress Sanitizer implementation is broken for us).</p>
+and fix bugs, we used Google&rsquo;s Address Sanitizer (ASan) and Undefined Behaviour Sanitizer (UBSan) to easily find and trace a variety of bugs such as buffer overflows, memory leaks and more. This (usually) works in parallel with gdb.</p>
+<p>To assist in performance evaluation, we used the Linux tool OProfile to determine the slowest method calls in the application.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>This year, Team Omicron presents a high-performance, custom vision and localisation application called Omicam. It is 
 written mainly in C, and runs on a LattePanda Delta 432. It is capable of processing vision at orders of magnitude faster
 than our previous solution, the OpenMV H7. We also present a novel approach to robot localisation, based on sensor-fusion
 and 2D non-linear optimisation. This approach is significantly more accurate and robust than previous methods. Finally,
-we introduce support for communication to our visualisation and managemetn application, Omicontrol (covered separately)
+we introduce support for communication to our visualisation and management application, Omicontrol (covered separately)
 using Protocol Buffers.</p>
 <h2 id="references">References</h2>
 <div class="footnote">
@@ -1102,7 +1097,7 @@ using Protocol Buffers.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../sbc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../open_source_release/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1111,7 +1106,7 @@ using Protocol Buffers.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                SBC
+                Our open-source release!
               </div>
             </div>
           </a>
@@ -1139,7 +1134,7 @@ using Protocol Buffers.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright (c) 2020 Team Omicron.
+            Copyright (c) 2020 Team Omicron. Documentation is under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
           </div>
         
         Made with
@@ -1154,8 +1149,8 @@ using Protocol Buffers.</p>
       
     </div>
     
-      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
