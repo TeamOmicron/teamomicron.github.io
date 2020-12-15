@@ -347,11 +347,24 @@
     Calibration view
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Calibration view">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#model-calculation-process" class="md-nav__link">
     Model calculation process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replay-view" class="md-nav__link">
+    Replay view
   </a>
   
 </li>
@@ -402,6 +415,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../fsm/" class="md-nav__link">
+      Finite State Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../strategy/" class="md-nav__link">
       Game strategies
     </a>
@@ -426,8 +451,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../fsm/" class="md-nav__link">
-      Finite State Machine
+    <a href="../communication/" class="md-nav__link">
+      Communication
     </a>
   </li>
 
@@ -449,29 +474,9 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" >
-    <label class="md-nav__link" for="nav-4-8">
-      Open source
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Open source" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
-        <span class="md-nav__icon md-icon"></span>
-        Open source
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
     <a href="../open_source/" class="md-nav__link">
-      Third party libraries
+      Third party library notices
     </a>
   </li>
 
@@ -480,9 +485,16 @@
     </nav>
   </li>
 
-        
-      </ul>
-    </nav>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../future_work/" class="md-nav__link">
+      Future ideas
+    </a>
   </li>
 
     
@@ -534,11 +546,24 @@
     Calibration view
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Calibration view">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#model-calculation-process" class="md-nav__link">
     Model calculation process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replay-view" class="md-nav__link">
+    Replay view
   </a>
   
 </li>
@@ -592,13 +617,14 @@
                   <h1>Omicontrol</h1>
                 
                 <p><img alt="Omicam logo" src="../images/omicontrol_logo_dark.png" />    </p>
-<p><em>Author(s): Matt Young, vision systems &amp; low-level developer</em></p>
+<p><em>Page author: Matt Young, vision systems &amp; low-level developer</em></p>
 <p>Omicontrol is Team Omicron&rsquo;s wireless robot/camera debugging and management application. With the creation of Omicam,
 we needed a way of visualising camera output, managing the SBC and editing thresholds. In the past, we used the OpenMV IDE,
 but given that Omicam is entirely custom developed, this meant we also had to custom-develop our own camera application.</p>
-<p>In addition, with our new advanced strategies and localisation, as well as the potential auto referee future rule addition,
-we felt like this year was a good time to add a remote robot management feature with the ability to reposition, reorient
-and automatically reset robots on the field wirelessly, as well as visualise their positions. </p>
+<p>In addition, with our new advanced strategies and localisation, as well as the potential auto referee future rule
+addition, we felt like this year was a good time to add a remote robot management feature in our future app with the
+ability to reposition, reorient and automatically reset robots on the field wirelessly, as well as visualise their
+positions. </p>
 <p>We added both of these features into Omicontrol, to make it essentially our all-in-one robot management application.
 Because the application will be used frequently in debugging as well as in the high-pressure mid-game interval, Omicontrol&rsquo;s
 primary design goals are to be easy to use and reliable.</p>
@@ -606,15 +632,37 @@ primary design goals are to be easy to use and reliable.</p>
 and uses JavaFX for the GUI, via the TornadoFX framework.</p>
 <p><img alt="Omicontrol" src="../images/omicontrol.png" />  <br />
 <em>Figure 1: Omicontrol main window running on KDE neon</em></p>
-<p><strong>TODO: maybe make the above a video demonstration fo Omicontrol</strong></p>
+<p><strong>TODO: VIDEO</strong></p>
 <h2 id="views">Views</h2>
 <p>Omicontrol functions through the concepts of &ldquo;views&rdquo;, which provide different information about different aspects of our
 robot(s).</p>
 <h3 id="camera-view">Camera view</h3>
-<p>The Camera View can to view camera output and tune threshold parameters.</p>
+<p>The Camera View can to view camera output and tune threshold parameters. This view receives a JPEG-compressed 720p
+video stream from Omicam and can be configured to display both the bounding box and individual pixels selected by
+the thresholds. The camera view supports the editing and live preview of thresholds for different objects (balls,
+yellow goal, blue goal, lines). This has greatly sped up development because thresholds can be previewed in realtime instead
+of having to wait for the app to restart (as was the case in OpenMV).</p>
+<p>The camera view supports thresholds specified in RGB, HSV, YUV and LAB colour spaces (although only RGB is sent to
+the robot). When changing colour spaces, the current threshold values are automatically converted. At the time of writing,
+this was a little bugged so we mostly just used RGB for thresholding.</p>
 <h3 id="field-view">Field view</h3>
 <p>Similar to teams in the major league, we implement a Field View to display the robots&rsquo; localised positions and enable
-control of them.</p>
+control of them. The field view allows us to get a full picture of the robot&rsquo;s world model (how it sees the world
+currently), and has been immensely useful in evaluating the performance of the localiser (as well as just being a cool
+thing to show off!). This view displays a top-down model of the field with the following features:</p>
+<ul>
+<li>sprites for each of our robots&rsquo; localised position (drawn to the correct orientation from the IMU as well)</li>
+<li>sprite for the ball&rsquo;s estimated position</li>
+<li>displays for detected robots and their estimated position</li>
+<li>many debug features for looking at he localisation algorithm and goal detection</li>
+<li>bandwidth display, localisation optimiser performance</li>
+<li>display of each robot&rsquo;s FSM state</li>
+</ul>
+<p>The sidebar also contains a panel for controlling the behaviour of the robots. Due to COVID-19 we didn&rsquo;t have a
+working robot as explained in other sections, so this feature wasn&rsquo;t fully implemented. Although the commands are
+forwarded from Omicontrol, to Omicam, to the ESP32, the ESP32 currently ignores the command. In a future release, 
+users would be able to click to move robots to a specific position, pause robots, orient them and even have them
+return to their starting position automatically. This would have proved very useful for testing robot behaviour.</p>
 <h3 id="calibration-view">Calibration view</h3>
 <p>This view is used to calibrate the mirror dewarp model, which translates pixel distances from the centre of the mirror
 into centimetre distances on the real field. In the past, this was complex and could take upwards of half an hour.
@@ -630,8 +678,7 @@ We decided this process could be greatly streamlined, so we added the calibratio
 </ol>
 <p>This approach streamlines mirror model calculation from being a painstaking 30 minute task, into one which can be
 done in a few button presses in under 5 minutes.</p>
-<p><strong>TODO talk about auto fill in data thing when you click</strong></p>
-<h3 id="model-calculation-process">Model calculation process</h3>
+<h4 id="model-calculation-process">Model calculation process</h4>
 <p>Once the user has selected a set of points, and the pixel and corresponding centimetre distances have been determined,
 we now have an interesting problem to solve. Essentially, we have to interpolate this dataset so that for any pixel
 distance we have, we can generate a corresponding centimetre distance. Ideally, this interpolation method would be accurate
@@ -645,10 +692,11 @@ polynomial interpolation is that it doesn&rsquo;t generalise to points outside t
 Because a regression generates coefficients for a mathematical model, in theory, it can extend with some accuracy outside
 the dataset, whereas polynomial interpolation just interpolates inside the dataset. Because of this, we decided to use
 a regression to generate our mirror model.</p>
-<p>The two models we chose to use for our regression were an N-th order polynomial and an exponential in the form
-<code>f(x) = ae^(bx)</code>. As both of these models are non-linear, we need to do a non-linear least squares regression to 
-calculate the coefficients. In the polynomial this is N unknowns, and in the exponential it&rsquo;s just <code>a</code> and <code>b</code>. Traditionally, we used to export the data to Excel and have it calculated in there, but we decided instead
-to implement the regression ourselves to increase the speed of the mirror calculation process.</p>
+<p>The two models we chose to use for our regression were an N-th order polynomial and an exponential in the form <code>f(x) =
+ae^(bx)</code>. As both of these models are non-linear, we need to do a non-linear least squares regression to calculate the
+coefficients. In the polynomial this is N unknowns, and in the exponential it&rsquo;s just <code>a</code> and <code>b</code>. Traditionally, we used
+to export the data to Excel and have it calculated in there, but we decided instead to implement the regression
+ourselves to increase the speed of the mirror calculation process.</p>
 <p>To perform our least squares regression, we use the Apache Commons Math library and its <code>AbstractCurveFitter</code>.
 This internally uses the
 Levenberg-Marquardt algorithm, an improvement over the Gauss-Newton algorithm, to converge on the most optimal values
@@ -660,6 +708,11 @@ with value and gradient vector.</p>
 Commons Math has no built-in way of finding the R<sup>2</sup> value from the result of an <code>AbstractCurveFitter</code>
 implementation, so instead we implemented it ourselves by calculating the residual sum of squares and total sum of squares
 <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination#Definitions">as explained here</a>.</p>
+<h3 id="replay-view">Replay view</h3>
+<p>Unfortunately, the replay view wasn&rsquo;t completed in time for release. In a future release, the replay view will be very
+similar to the field view, except it would allow playing back of recorded Omicam Protobuf replay files (*.omirec).
+The UI would essentially be the same, just minus the online features like movement control and the addition of a 
+video-player-like scrub bar and play/pause/time warp controls.</p>
 <h2 id="wireless-connection">Wireless connection</h2>
 <p>Being able to connect to any robot wirelessly and manage it can be a great quality of life improvement when debugging
 fast moving robots. There are a variety of wireless protocols in existence such as
@@ -673,12 +726,12 @@ an Internet-connected router hosts the LattePanda device on its network via Ethe
 port 42708 which is used for Omicam to Omicontrol communications. Then, the client computer in an entirely different location,
 even a different country, connects to the Omicam router&rsquo;s public IP address and can interact with the camera and robots
 as normal. While this is interesting, nonetheless it&rsquo;s not used in practice due to lack of security, lack of need and
-Omicam&rsquo;s high bandwidth requirements (as it&rsquo;s designed for local connections).</p>
+Omicam&rsquo;s bandwidth and latency being too high (as its designed for high-speed local connections).</p>
 <h2 id="wired-connection">Wired connection</h2>
-<p>Although wireless connection is very flexible, on the LattePanda it comes at the cost of a very poor connection in some
-situations and on some SBCs, unfortunately such as the LattePanda. Thus, we decided to use gigabit Ethernet as an alternative 
-connection type. This also acts as a backup in case the venue bans WiFi hotspots (as has happened before), or there&rsquo;s too much signal 
-noise to connect properly.</p>
+<p>Although wireless connection is very flexible, on the LattePanda it unfortunately comes at the cost of a very poor
+connection quality. Thus, we decided to use gigabit Ethernet as an alternative connection type. This also acts as a
+backup in case the venue bans WiFi hotspots (as has happened before), or there&rsquo;s too much signal noise to connect
+properly.</p>
 <p>This works by using a special Ethernet crossover cable and creating a simple network through assigning static IPs. The user
 can simply connect to the static IP they assigned the SBC. Just like the WiFi setup, this creates an offline connection 
 between the two devices at a very high bandwidth and stability. We experience no connection issues at all over Ethernet 
@@ -697,7 +750,6 @@ the socket, as well as detecting errors in the connection. All of the code that 
 in a separate thread to the JavaFX UI thread so that the UI isn&rsquo;t locked up every time a response is queued.</p>
 <p>When a button in Omicontrol is clicked, this thread encodes and transmits a Protocol Buffer message to Omicam and waits
 for a response asynchronously, notifying the calling thread once one is received.</p>
-<p><strong>Should put more info here, stuff like how we basically have budget RPC with protobuf</strong></p>
 <h2 id="design-considerations">Design considerations</h2>
 <p>The Omicontrol UI was designed to look professional, be simple to use, friendly to use as a tablet and work cross-platform.</p>
 <p>Since Omicontrol is written in Kotlin using JavaFX (via TornadoFX), the app runs on Windows, Mac and Linux with minimal
@@ -735,13 +787,13 @@ porting required (mainly for changing display types).</p>
           </a>
         
         
-          <a href="../strategy/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../fsm/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Game strategies
+                Finite State Machine
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

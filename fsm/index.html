@@ -304,30 +304,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../strategy/" class="md-nav__link">
-      Game strategies
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../protobuf/" class="md-nav__link">
-      Protocol Buffers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -411,8 +387,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#general-states" class="md-nav__link">
-    General states
+  <a href="#general-states-shared" class="md-nav__link">
+    General states (shared)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timers" class="md-nav__link">
+    Timers
+  </a>
+  
+    <nav class="md-nav" aria-label="Timers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-timers" class="md-nav__link">
+    List of timers
   </a>
   
 </li>
@@ -435,6 +431,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../strategy/" class="md-nav__link">
+      Game strategies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protobuf/" class="md-nav__link">
+      Protocol Buffers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../communication/" class="md-nav__link">
+      Communication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../lowlevel/" class="md-nav__link">
       Low-level code
     </a>
@@ -446,29 +478,9 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" >
-    <label class="md-nav__link" for="nav-4-8">
-      Open source
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Open source" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
-        <span class="md-nav__icon md-icon"></span>
-        Open source
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
     <a href="../open_source/" class="md-nav__link">
-      Third party libraries
+      Third party library notices
     </a>
   </li>
 
@@ -477,9 +489,16 @@
     </nav>
   </li>
 
-        
-      </ul>
-    </nav>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../future_work/" class="md-nav__link">
+      Future ideas
+    </a>
   </li>
 
     
@@ -557,8 +576,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#general-states" class="md-nav__link">
-    General states
+  <a href="#general-states-shared" class="md-nav__link">
+    General states (shared)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timers" class="md-nav__link">
+    Timers
+  </a>
+  
+    <nav class="md-nav" aria-label="Timers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-timers" class="md-nav__link">
+    List of timers
   </a>
   
 </li>
@@ -608,9 +647,8 @@ state at all times, issues can be rapidly identified and pinpointed from the ter
 our efficiency with regards to solving problems and debugging.</p>
 <p>It also allows for greater flexibility when programming the robot. New actions can simply be added by adding a new state
 to the finite state machine. Furthermore, various additions such as timers can be added quickly and efficiently.</p>
-<p>Another benefit is the code cleanliness. While other teams may have convoluted blocks of if statements (sometimes called
-“spaghetti code”), our code is cleanly organised into a series of functions. We plan to use and improve our FSM for next
-year to implement even more advanced strategies.</p>
+<p>Another benefit is the code cleanliness. Using the FSM we have found, avoids much of the dreaded &ldquo;spaghetti code&rdquo; a lot
+of teams have.</p>
 <h2 id="drawbacks">Drawbacks</h2>
 <p>The main drawback of an FSM is the possibility of rapid alternating between two states caused by logic errors or noise.
 At its worse, this can cause the robot get stuck swapping between two states and not make any progress. However, these
@@ -618,8 +656,26 @@ instances are not only rare, but solvable, with tuning. Furthermore, the FSM its
 errors easier.</p>
 <h2 id="states">States</h2>
 <h3 id="attacker-states">Attacker states</h3>
+<p>Idle: entered into when the robot cannot see the ball for 5 seconds. Manoeuvres into the centre of the field.</p>
+<p>Pursue: entered into when the robot needs to move quickly towards the ball when it is far away.</p>
+<p>Orbit: our exponential orbit, entered into when the robot is behind the ball and needs to be in front of it.</p>
+<p>Dribble: once the robot has the ball in its capture zone, this state is entered into. Accelerates the robot linearly towards the goal.</p>
 <h3 id="defender-states">Defender states</h3>
-<h3 id="general-states">General states</h3>
+<p>Reverse: entered into when the goal is not visible. Reverses and aligns itself to the back wall with the LRF</p>
+<p>Idle: entered into when the ball is not visible. Manoeuvres in front of the goal.</p>
+<p>Defend: entered into when the robot is visible. Positions itself between the ball and the goal.</p>
+<p>Surge: entered into when the robot is in possession of the ball. Rushes forward to put distance between the ball and the goal. If the other robot is active, it will switch to attacker state.</p>
+<h3 id="general-states-shared">General states (shared)</h3>
+<p>Shoot: entered into when the robot is has a clear shot of the goal. Activates solenoid kicker.</p>
+<h2 id="timers">Timers</h2>
+<p>Timers are an essential part of our robots behaviour, and are particularly relevant for our finite state machine. We use FreeRTOS’ highly efficient software timers, which use zero CPU time and add zero overhead to the tick unless they’re activated. We extended FreeRTOS’ timer system using a custom add-on layer that we developed, to assist in creating timers, stopping them and starting them if they’re not already running.</p>
+<h3 id="list-of-timers">List of timers</h3>
+<p>Bluetooth packet timer: if a BT packet is not received in this time, the other robot must be off for damage</p>
+<p>Cooldown timer: after a switch, this timer is started, and another switch is not permitted until it expires</p>
+<p>Idle timer: if the ball is not visible for this time, switch into idle state</p>
+<p>Dribble timer: if the ball is in the capture zone and close enough for this time, switch into dribble state</p>
+<p>Surge timer: same as the above for defender, but switch into surge state</p>
+<p>Shoot timer: if the ball is in the capture zone for long enough, kick</p>
                 
               
               
@@ -638,7 +694,7 @@ errors easier.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../protobuf/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../omicontrol/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -647,19 +703,19 @@ errors easier.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Protocol Buffers
+                Omicontrol
               </div>
             </div>
           </a>
         
         
-          <a href="../lowlevel/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../strategy/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Low-level code
+                Game strategies
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
