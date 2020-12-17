@@ -656,26 +656,32 @@ instances are not only rare, but solvable, with tuning. Furthermore, the FSM its
 errors easier.</p>
 <h2 id="states">States</h2>
 <h3 id="attacker-states">Attacker states</h3>
-<p>Idle: entered into when the robot cannot see the ball for 5 seconds. Manoeuvres into the centre of the field.</p>
-<p>Pursue: entered into when the robot needs to move quickly towards the ball when it is far away.</p>
-<p>Orbit: our exponential orbit, entered into when the robot is behind the ball and needs to be in front of it.</p>
-<p>Dribble: once the robot has the ball in its capture zone, this state is entered into. Accelerates the robot linearly towards the goal.</p>
+<ul>
+<li>Idle: entered into when the robot cannot see the ball for 5 seconds. Manoeuvres into the centre of the field.</li>
+<li>Pursue: entered into when the robot needs to move quickly towards the ball when it is far away.</li>
+<li>Orbit: our exponential orbit, entered into when the robot is behind the ball and needs to be in front of it.</li>
+<li>Dribble: once the robot has the ball in its capture zone, this state is entered into. Accelerates the robot linearly towards the goal.</li>
+</ul>
 <h3 id="defender-states">Defender states</h3>
-<p>Reverse: entered into when the goal is not visible. Reverses and aligns itself to the back wall with the LRF</p>
-<p>Idle: entered into when the ball is not visible. Manoeuvres in front of the goal.</p>
-<p>Defend: entered into when the robot is visible. Positions itself between the ball and the goal.</p>
-<p>Surge: entered into when the robot is in possession of the ball. Rushes forward to put distance between the ball and the goal. If the other robot is active, it will switch to attacker state.</p>
+<ul>
+<li>Reverse: entered into when the goal is not visible. Reverses and aligns itself to the back wall with the LRF</li>
+<li>Idle: entered into when the ball is not visible. Manoeuvres in front of the goal.</li>
+<li>Defend: entered into when the robot is visible. Positions itself between the ball and the goal.</li>
+<li>Surge: entered into when the robot is in possession of the ball. Rushes forward to put distance between the ball and the goal. If the other robot is active, it will switch to attacker state.</li>
+</ul>
 <h3 id="general-states-shared">General states (shared)</h3>
 <p>Shoot: entered into when the robot is has a clear shot of the goal. Activates solenoid kicker.</p>
 <h2 id="timers">Timers</h2>
 <p>Timers are an essential part of our robots behaviour, and are particularly relevant for our finite state machine. We use FreeRTOS’ highly efficient software timers, which use zero CPU time and add zero overhead to the tick unless they’re activated. We extended FreeRTOS’ timer system using a custom add-on layer that we developed, to assist in creating timers, stopping them and starting them if they’re not already running.</p>
 <h3 id="list-of-timers">List of timers</h3>
-<p>Bluetooth packet timer: if a BT packet is not received in this time, the other robot must be off for damage</p>
-<p>Cooldown timer: after a switch, this timer is started, and another switch is not permitted until it expires</p>
-<p>Idle timer: if the ball is not visible for this time, switch into idle state</p>
-<p>Dribble timer: if the ball is in the capture zone and close enough for this time, switch into dribble state</p>
-<p>Surge timer: same as the above for defender, but switch into surge state</p>
-<p>Shoot timer: if the ball is in the capture zone for long enough, kick</p>
+<ul>
+<li>Bluetooth packet timer: if a BT packet is not received in this time, the other robot must be off for damage</li>
+<li>Cooldown timer: after a switch, this timer is started, and another switch is not permitted until it expires</li>
+<li>Idle timer: if the ball is not visible for this time, switch into idle state</li>
+<li>Dribble timer: if the ball is in the capture zone and close enough for this time, switch into dribble state</li>
+<li>Surge timer: same as the above for defender, but switch into surge state</li>
+<li>Shoot timer: if the ball is in the capture zone for long enough, kick</li>
+</ul>
                 
               
               
